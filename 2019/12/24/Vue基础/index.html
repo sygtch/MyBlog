@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="haha, Hexo">
-    <meta name="description" content="郭天驰haha1234567@GetMapping(&#34;/fore/&amp;#123;articleId&amp;#125;&#34;)   @ApiOperation(value = &#34;按文章id取所有可显示的评论&#34;, notes = &#34;按文章id取所有可显示的">
+    <meta name="keywords" content="Vue基础, Hexo">
+    <meta name="description" content="Vue基础1.模板语法
+v-bind 绑定 ，用冒号绑定
+12345678910111213141516&amp;lt;div id&amp;#x3D;&amp;quot;app&amp;quot;&amp;gt;	&amp;#123;&amp;#123;5+5&amp;#125;&amp;#125;&amp;lt;b">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>haha | Hexo</title>
+    <title>Vue基础 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -303,12 +305,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">haha</h1>
+                    <h1 class="description center-align post-title">Vue基础</h1>
                 </div>
             </div>
         </div>
@@ -437,7 +439,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-12-21
+                    2019-12-24
                 </div>
                 
 
@@ -454,7 +456,42 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="郭天驰"><a href="#郭天驰" class="headerlink" title="郭天驰"></a>郭天驰</h3><h2 id="haha"><a href="#haha" class="headerlink" title="haha"></a>haha</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping</span>(<span class="string">"/fore/&#123;articleId&#125;"</span>)</span><br><span class="line">   <span class="meta">@ApiOperation</span>(value = <span class="string">"按文章id取所有可显示的评论"</span>, notes = <span class="string">"按文章id取所有可显示的评论"</span>)</span><br><span class="line">   <span class="meta">@ApiImplicitParam</span>(value = <span class="string">"按文章id取所有可显示的评论"</span>,name = <span class="string">"articleID"</span>,required = <span class="keyword">true</span>,dataType = <span class="string">"articleID"</span>,paramType = <span class="string">"path"</span>)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> GetBlogCommentsResponse <span class="title">getShowComments</span><span class="params">(String articleID)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> blogCommentService.getShowComments(articleID);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+                <h1 id="Vue基础"><a href="#Vue基础" class="headerlink" title="Vue基础"></a>Vue基础</h1><h2 id="1-模板语法"><a href="#1-模板语法" class="headerlink" title="1.模板语法"></a>1.模板语法</h2><ul>
+<li><p>v-bind 绑定 ，<strong>用冒号绑定</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">	&#123;&#123;5+5&#125;&#125;&lt;br&gt;</span><br><span class="line">	&#123;&#123; ok ? &#39;YES&#39; : &#39;NO&#39; &#125;&#125;&lt;br&gt;</span><br><span class="line">	&#123;&#123; message.split(&#39;&#39;).reverse().join(&#39;&#39;) &#125;&#125;</span><br><span class="line">	&lt;div v-bind:id&#x3D;&quot;&#39;list-&#39; + id&quot;&gt;菜鸟教程&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">	</span><br><span class="line">&lt;script&gt;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">	ok: true,</span><br><span class="line">    message: &#39;RUNOOB&#39;,</span><br><span class="line">	id : 1</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>v-if 根据true/false执行，<strong>用等号绑定</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;p v-if&#x3D;&quot;seen&quot;&gt;现在你看到我了&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">    </span><br><span class="line">&lt;script&gt;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    seen: true</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>v-on监听事件，<strong>用冒号绑定</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; message &#125;&#125;&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;button v-on:click&#x3D;&quot;reverseMessage&quot;&gt;反转字符串&lt;&#x2F;button&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">	</span><br><span class="line">&lt;script&gt;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: &#39;Runoob!&#39;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    reverseMessage: function () &#123;</span><br><span class="line">      this.message &#x3D; this.message.split(&#39;&#39;).reverse().join(&#39;&#39;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>过滤器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">  &#123;&#123; message | capitalize &#125;&#125;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">	</span><br><span class="line">&lt;script&gt;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">	message: &#39;runoob&#39;</span><br><span class="line">  &#125;,</span><br><span class="line">  filters: &#123;</span><br><span class="line">    capitalize: function (value) &#123;</span><br><span class="line">      if (!value) return &#39;&#39;</span><br><span class="line">      value &#x3D; value.toString()</span><br><span class="line">      return value.charAt(0).toUpperCase() + value.slice(1)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<p>  过滤器可以串联：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; message | filterA | filterB &#125;&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;这里，message 是第一个参数，字符串 &#39;arg1&#39; 将传给过滤器作为第二个参数， arg2 表达式的值将被求值然后传给过滤器作为第三个参数</span><br><span class="line">&#123;&#123; message | filterA(&#39;arg1&#39;, arg2) &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+
 
 
             </div>
@@ -481,7 +518,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2019/12/21/haha/">http://yoursite.com/2019/12/21/haha/</a>
+                    <a href="http://yoursite.com/2019/12/24/Vue%E5%9F%BA%E7%A1%80/">http://yoursite.com/2019/12/24/Vue%E5%9F%BA%E7%A1%80/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -682,9 +719,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2019/12/24/Vue%E5%9F%BA%E7%A1%80/">
                     <div class="card-image">
@@ -704,9 +742,9 @@ v-bind 绑定 ，用冒号绑定
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -715,6 +753,7 @@ v-bind 绑定 ，用冒号绑定
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -725,19 +764,19 @@ v-bind 绑定 ，用冒号绑定
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/21/test-my-site/">
+                <a href="/2019/12/21/haha/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="test_my_site">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="haha">
                         
-                        <span class="card-title">test_my_site</span>
+                        <span class="card-title">haha</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            郭天驰haha1234567@GetMapping("/fore/&#123;articleId&#125;")   @ApiOperation(value = "按文章id取所有可显示的评论", notes = "按文章id取所有可显示的
                         
                     </div>
                     <div class="publish-info">
