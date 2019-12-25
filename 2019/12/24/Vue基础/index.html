@@ -487,43 +487,29 @@ v-b">
 </ul>
 <ul>
 <li><p>v-on 绑定事件，<strong>用冒号绑定</strong></p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token punctuation">{</span><span class="token punctuation">{</span> message <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
-    <span class="token operator">&lt;</span>button v<span class="token operator">-</span>on<span class="token punctuation">:</span>click<span class="token operator">=</span><span class="token string">"reverseMessage"</span><span class="token operator">></span>反转字符串<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+    <span class="token operator">&lt;</span>button v<span class="token operator">-</span>on<span class="token operator">:</span>click<span class="token operator">=</span><span class="token string">"reverseMessage"</span><span class="token operator">></span>反转字符串<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
 
 <span class="token operator">&lt;</span>script<span class="token operator">></span>
 <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
-  data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    message<span class="token punctuation">:</span> <span class="token string">'Runoob!'</span>
+  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    message<span class="token operator">:</span> <span class="token string">'Runoob!'</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    reverseMessage<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+    reverseMessage<span class="token operator">:</span> <span class="token function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token keyword">this</span><span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>message<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
 </li>
-<li><p>v-if 根据true/false执行，<strong>用等号绑定</strong></p>
-<pre class=" language-vue"><code class="language-vue"><div id="app">
-    <p v-if="seen">现在你看到我了</p>
-</div>
-
-<script>
-new Vue({
-  el: '#app',
-  data: {
-    seen: true
-  }
-})
-</script></code></pre>
-</li>
 </ul>
 <ul>
 <li><p>v-model 双向绑定，指令用来在 input、select、textarea、checkbox、radio 等表单控件元素上创建双向数据绑定，根据表单上的值，自动更新绑定的元素的值。</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//此处，改变v-model文本框的值，&lt;P>的值随之改变</span>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//此处，改变v-model文本框的值，&lt;P>的值随之改变</span>
 <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token punctuation">{</span><span class="token punctuation">{</span> message <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
     <span class="token operator">&lt;</span>input v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"message"</span><span class="token operator">></span>
@@ -531,154 +517,169 @@ new Vue({
 
 <span class="token operator">&lt;</span>script<span class="token operator">></span>
 <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
-  data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    message<span class="token punctuation">:</span> <span class="token string">'Runoob!'</span>
+  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    message<span class="token operator">:</span> <span class="token string">'Runoob!'</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
 </li>
 </ul>
 <ul>
-<li><p>v-if</p>
-<pre class=" language-vue"><code class="language-vue"><div id="app">
-    <div v-if="type === 'A'">
-      A
-    </div>
-    <div v-else-if="type === 'B'">
-      B
-    </div>
-    <div v-else-if="type === 'C'">
-      C
-    </div>
-    <div v-else>
-      Not A/B/C
-    </div>
-</div>
+<li><p>v-if 根据true/false执行，<strong>用等号绑定</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>p v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"seen"</span><span class="token operator">></span>现在你看到我了<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
 
-<script>
-new Vue({
-  el: '#app',
-  data: {
-    type: 'C'
-  }
-})
-</script></code></pre>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    seen<span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+</li>
+</ul>
+<ul>
+<li><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>div v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"type === 'A'"</span><span class="token operator">></span>
+      A
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div v<span class="token operator">-</span><span class="token keyword">else</span><span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"type === 'B'"</span><span class="token operator">></span>
+      B
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div v<span class="token operator">-</span><span class="token keyword">else</span><span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"type === 'C'"</span><span class="token operator">></span>
+      C
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div v<span class="token operator">-</span><span class="token keyword">else</span><span class="token operator">></span>
+      Not A<span class="token operator">/</span>B<span class="token operator">/</span>C
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    type<span class="token operator">:</span> <span class="token string">'C'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
 </li>
 </ul>
 <ul>
 <li><p>v-for循环</p>
-<pre class=" language-vue"><code class="language-vue"><div id="app">
-  <ol>
-    <li v-for="site in sites">
-      {{ site.name }}
-    </li>
-  </ol>
-</div>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span>ol<span class="token operator">></span>
+    <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"site in sites"</span><span class="token operator">></span>
+      <span class="token punctuation">{</span><span class="token punctuation">{</span> site<span class="token punctuation">.</span>name <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>ol<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
 
-<script>
-new Vue({
-  el: '#app',
-  data: {
-    sites: [
-      { name: 'Runoob' },
-      { name: 'Google' },
-      { name: 'Taobao' }
-    ]
-  }
-})
-</script></code></pre>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    sites<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'Runoob'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'Google'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'Taobao'</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
 <p>也可以对一个对象迭代：</p>
 <ol>
 <li>如果只有一个值 value，则该值为属性的值，即“菜鸟教程”；</li>
 <li>如果两个值，value仍为值即“菜鸟教程”，key为属性名即“name”;</li>
 <li>如果三个参数，前两个参数同上，第三个为序号索引，即“0”</li>
 </ol>
-<pre class=" language-vue"><code class="language-vue"><div id="app">
-  <ul>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span>ul<span class="token operator">></span>
 
-    <li v-for="value in object">
-    {{ value }}
-    </li>
+    <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"value in object"</span><span class="token operator">></span>
+    <span class="token punctuation">{</span><span class="token punctuation">{</span> value <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
 
-    <li v-for="(value, key) in object">
-    {{ key }} : {{ value }}
-    </li>
+    <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(value, key) in object"</span><span class="token operator">></span>
+    <span class="token punctuation">{</span><span class="token punctuation">{</span> key <span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> value <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
 
-     <li v-for="(value, key, index) in object">
-     {{ index }}. {{ key }} : {{ value }}
-    </li>
+     <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(value, key, index) in object"</span><span class="token operator">></span>
+     <span class="token punctuation">{</span><span class="token punctuation">{</span> index <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">.</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> key <span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> value <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
 
-    <li v-for="n in 10">
-     {{ n }}
-    </li>
+    <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"n in 10"</span><span class="token operator">></span>
+     <span class="token punctuation">{</span><span class="token punctuation">{</span> n <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
 
-  </ul>
-</div>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
 
-<script>
-new Vue({
-  el: '#app',
-  data: {
-    object: {
-      name: '菜鸟教程',
-      url: 'http://www.runoob.com',
-      slogan: '学的不仅是技术，更是梦想！'
-    }
-  }
-})
-</script></code></pre>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    object<span class="token operator">:</span> <span class="token punctuation">{</span>
+      name<span class="token operator">:</span> <span class="token string">'菜鸟教程'</span><span class="token punctuation">,</span>
+      url<span class="token operator">:</span> <span class="token string">'http://www.runoob.com'</span><span class="token punctuation">,</span>
+      slogan<span class="token operator">:</span> <span class="token string">'学的不仅是技术，更是梦想！'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
 <p>若为集合的遍历：其中item同上面的value，即{ id: 1, name: ‘李斯’ }，而 i 则为序号索引</p>
-<pre class=" language-vue"><code class="language-vue">  <div id="app">
-    <div>
-      <input type="text" v-model="name">
-      <button @click="add">添加</button>
-    </div>
-    <ul>
-      <li v-for="(item, i) in list" :key="item.id">
-        <input type="checkbox"> {{item.name}}
-      </li>
-    </ul>
-<script>
-    // 创建 Vue 实例，得到 ViewModel
-    var vm = new Vue({
-      el: '#app',
-      data: {
-        name: '',
-        newId: 3,
-        list: [
-          { id: 1, name: '李斯' },
-          { id: 2, name: '吕不韦' },
-          { id: 3, name: '嬴政' }
-        ]
-      },
-      methods: {
-        add() {
-         //注意这里是unshift
-          this.list.unshift({ id: ++this.newId, name: this.name })
-          this.name = ''
-        }
-      }
-    });
-  </script>
-  </div></code></pre>
+<pre class=" language-javascript"><code class="language-javascript">  <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>div<span class="token operator">></span>
+      <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"name"</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">"add"</span><span class="token operator">></span>添加<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>ul<span class="token operator">></span>
+      <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(item, i) in list"</span> <span class="token punctuation">:</span>key<span class="token operator">=</span><span class="token string">"item.id"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"checkbox"</span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token punctuation">{</span>item<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token comment" spellcheck="true">// 创建 Vue 实例，得到 ViewModel</span>
+    <span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+      data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        name<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        newId<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+        list<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token string">'李斯'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token string">'吕不韦'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token string">'嬴政'</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token comment" spellcheck="true">//注意这里是unshift</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>list<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token operator">++</span><span class="token keyword">this</span><span class="token punctuation">.</span>newId<span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token punctuation">}</span><span class="token punctuation">)</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">''</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code></pre>
 <p>为了解决checkbox等内容的绑定问题，要加key</p>
-<pre class=" language-vue"><code class="language-vue"><li v-for="(item, i) in list" :key="item.id">
-        <input type="checkbox"> {{item.name}}
-</li></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(item, i) in list"</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"item.id"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"checkbox"</span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token punctuation">{</span>item<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span></code></pre>
 </li>
 <li><p>缩写</p>
 <p><strong>v-bind</strong></p>
 <p>Vue.js 为两个最为常用的指令提供了特别的缩写：</p>
-<pre class=" language-vue"><code class="language-vue"><!-- 完整语法 -->
-<a v-bind:href="url"></a>
-<!-- 缩写 -->
-<a :href="url"></a></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 完整语法 <span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>a v<span class="token operator">-</span>bind<span class="token operator">:</span>href<span class="token operator">=</span><span class="token string">"url"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 缩写 <span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>a <span class="token operator">:</span>href<span class="token operator">=</span><span class="token string">"url"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span></code></pre>
 <p><strong>v-on 缩写</strong></p>
-<pre class=" language-vue"><code class="language-vue"><!-- 完整语法 -->
-<a v-on:click="doSomething"></a>
-<!-- 缩写 -->
-<a @click="doSo</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 完整语法 <span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>a v<span class="token operator">-</span>on<span class="token operator">:</span>click<span class="token operator">=</span><span class="token string">"doSomething"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 缩写 <span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>a <span class="token annotation punctuation">@click</span><span class="token operator">=</span>"doSo</code></pre>
 </li>
 <li><p>另：</p>
 <ol>
@@ -691,163 +692,163 @@ new Vue({
 </ul>
 <h2 id="2-script-中的方法"><a href="#2-script-中的方法" class="headerlink" title="2. script 中的方法"></a>2. script 中的方法</h2><ul>
 <li><p>过滤器：过滤器函数接受表达式的值作为第一个参数。</p>
-<pre class=" language-vue"><code class="language-vue"><div id="app">
-  {{ message | capitalize }}
-</div>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+  <span class="token punctuation">{</span><span class="token punctuation">{</span> message <span class="token operator">|</span> capitalize <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
 
-<script>
-new Vue({
-  el: '#app',
-  data: {
-    message: 'runoob'
-  },
-  filters: {
-    capitalize: function (value) {
-      if (!value) return ''
-      value = value.toString()
-      return value.charAt(0).toUpperCase() + value.slice(1)
-    }
-  }
-})
-</script></code></pre>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    message<span class="token operator">:</span> <span class="token string">'runoob'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  filters<span class="token operator">:</span> <span class="token punctuation">{</span>
+    capitalize<span class="token operator">:</span> <span class="token function">function</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>value<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token string">''</span>
+      value <span class="token operator">=</span> value<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> value<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> value<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
 </li>
 </ul>
 <p>  过滤器可以串联：</p>
-<pre class=" language-vue"><code class="language-vue">  {{ message | filterA | filterB }}
+<pre class=" language-java"><code class="language-java">  <span class="token punctuation">{</span><span class="token punctuation">{</span> message <span class="token operator">|</span> filterA <span class="token operator">|</span> filterB <span class="token punctuation">}</span><span class="token punctuation">}</span>
 
-  //这里，message 是第一个参数，字符串 'arg1' 将传给过滤器作为第二个参数， arg2 表达式的值将被求值然后传给过滤器作为第三个参数
-  {{ message | filterA('arg1', arg2) }}</code></pre>
+  <span class="token comment" spellcheck="true">//这里，message 是第一个参数，字符串 'arg1' 将传给过滤器作为第二个参数， arg2 表达式的值将被求值然后传给过滤器作为第三个参数</span>
+  <span class="token punctuation">{</span><span class="token punctuation">{</span> message <span class="token operator">|</span> <span class="token function">filterA</span><span class="token punctuation">(</span><span class="token string">'arg1'</span><span class="token punctuation">,</span> arg2<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre>
 <p>  过滤器可以接收多个表达式，message 和 mesage2 将作为过滤器的前两个参数:</p>
-<pre class=" language-vue"><code class="language-vue">  <div id="app">
-    {{ message,message2 | capitalize('aa') }}
-  </div>
+<pre class=" language-java"><code class="language-java">  <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+    <span class="token punctuation">{</span><span class="token punctuation">{</span> message<span class="token punctuation">,</span>message2 <span class="token operator">|</span> <span class="token function">capitalize</span><span class="token punctuation">(</span><span class="token string">'aa'</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
 
-  <script>
-  new Vue({
-    el: '#app',
-    data: {
-      message: 'runoob',
-      message2: 'runoob'
-    },
-    filters: {
-      capitalize: function (value,value2,value3) {
-        if (!value) return ''
-        value = value.toString()
-        return value.charAt(0).toUpperCase() +             value.slice(1)+value.substring(0,value2.length-1)+value2.charAt(value2.length-1).toUpperCase()+'<br>'+value3
-      }
-    }
-  })
-  </script>
+  <span class="token operator">&lt;</span>script<span class="token operator">></span>
+  <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+      message<span class="token operator">:</span> <span class="token string">'runoob'</span><span class="token punctuation">,</span>
+      message2<span class="token operator">:</span> <span class="token string">'runoob'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    filters<span class="token operator">:</span> <span class="token punctuation">{</span>
+      capitalize<span class="token operator">:</span> <span class="token function">function</span> <span class="token punctuation">(</span>value<span class="token punctuation">,</span>value2<span class="token punctuation">,</span>value3<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>value<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token string">''</span>
+        value <span class="token operator">=</span> value<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> value<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>             value<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span>value<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>value2<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span>value2<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>value2<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'&lt;br>'</span><span class="token operator">+</span>value3
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
 
-  //输出 RunoobrunooB aa</code></pre>
+  <span class="token comment" spellcheck="true">//输出 RunoobrunooB aa</span></code></pre>
 <ul>
 <li><p>computed</p>
-<pre class=" language-vue"><code class="language-vue"><!--声明了一个计算属性 reversedMessage 。
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>声明了一个计算属性 reversedMessage 。
 
-    提供的函数将用作属性 vm.reversedMessage 的 getter 。
+    提供的函数将用作属性 vm<span class="token punctuation">.</span>reversedMessage 的 getter 。
 
-    vm.reversedMessage 依赖于 vm.message，在 vm.message 发生改变时，vm.reversedMessage 也会更新。-->
+    vm<span class="token punctuation">.</span>reversedMessage 依赖于 vm<span class="token punctuation">.</span>message，在 vm<span class="token punctuation">.</span>message 发生改变时，vm<span class="token punctuation">.</span>reversedMessage 也会更新。<span class="token operator">--</span><span class="token operator">></span>
 
-<div id="app">
-  <p>原始字符串: {{ message }}</p>
-  <p>计算后反转字符串: {{ reversedMessage }}</p>
-</div>
+<span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span>p<span class="token operator">></span>原始字符串<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> message <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+  <span class="token operator">&lt;</span>p<span class="token operator">></span>计算后反转字符串<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> reversedMessage <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
 
-<script>
-var vm = new Vue({
-  el: '#app',
-  data: {
-    message: 'Runoob!'
-  },
-  computed: {
-    // 计算属性的 getter
-    reversedMessage: function () {
-      // `this` 指向 vm 实例
-      return this.message.split('').reverse().join('')
-    }
-  }
-})
-</script></code></pre>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+var vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    message<span class="token operator">:</span> <span class="token string">'Runoob!'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 计算属性的 getter</span>
+    reversedMessage<span class="token operator">:</span> <span class="token function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// `this` 指向 vm 实例</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>message<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
 <p>computed 属性默认只有 getter ，不过在需要时你也可以提供一个 setter ：</p>
-<pre class=" language-vue"><code class="language-vue"><div id="app">
-  <p>{{ site }}</p>
-</div>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token punctuation">{</span><span class="token punctuation">{</span> site <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
 
-<script>
-var vm = new Vue({
-  el: '#app',
-  data: {
-    name: 'Google',
-    url: 'http://www.google.com'
-  },
-  computed: {
-    site: {
-      // getter
-      get: function () {
-        return this.name + ' ' + this.url
-      },
-      // setter
-      set: function (newValue) {
-        var names = newValue.split(' ')
-        this.name = names[0]
-        this.url = names[names.length - 1]
-      }
-    }
-  }
-})
-// 调用 setter， vm.name 和 vm.url 也会被对应更新
-vm.site = '菜鸟教程 http://www.runoob.com';
-document.write('name: ' + vm.name);
-document.write('<br>');
-document.write('url: ' + vm.url);
-</script></code></pre>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+var vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">'Google'</span><span class="token punctuation">,</span>
+    url<span class="token operator">:</span> <span class="token string">'http://www.google.com'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+    site<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// getter</span>
+      get<span class="token operator">:</span> <span class="token function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>url
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment" spellcheck="true">// setter</span>
+      set<span class="token operator">:</span> <span class="token function">function</span> <span class="token punctuation">(</span>newValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        var names <span class="token operator">=</span> newValue<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> names<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>url <span class="token operator">=</span> names<span class="token punctuation">[</span>names<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// 调用 setter， vm.name 和 vm.url 也会被对应更新</span>
+vm<span class="token punctuation">.</span>site <span class="token operator">=</span> <span class="token string">'菜鸟教程 http://www.runoob.com'</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'name: '</span> <span class="token operator">+</span> vm<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'&lt;br>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'url: '</span> <span class="token operator">+</span> vm<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
 </li>
 </ul>
 <ul>
 <li><p>computer 和 method 比较:如下面代码，cnt 是独立于 vm 对象的变量。在使用 reversedMessage 这个计算属性的时候，第一次会执行代码，得到一个值，以后再使用 reversedMessage 这个计算属性，因为 vm 对象没有发生改变，于是界面渲染就直接用这个值，不再重复执行代码。而 reversedMessage2 没有这个缓存，只要用一次，函数代码就执行一次，于是每次返回值都不一样。</p>
-<pre class=" language-vue"><code class="language-vue"><div id="app">
-  <p>原始字符串: {{ message }}</p>
-  <p>计算后反转字符串: {{ reversedMessage }}</p>
-  <p>计算后反转字符串: {{ reversedMessage }}</p>
-  <p>使用方法后反转字符串: {{ reversedMessage2() }}</p>
-  <p>使用方法后反转字符串: {{ reversedMessage2() }}</p>
-</div>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span>p<span class="token operator">></span>原始字符串<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> message <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+  <span class="token operator">&lt;</span>p<span class="token operator">></span>计算后反转字符串<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> reversedMessage <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+  <span class="token operator">&lt;</span>p<span class="token operator">></span>计算后反转字符串<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> reversedMessage <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+  <span class="token operator">&lt;</span>p<span class="token operator">></span>使用方法后反转字符串<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token function">reversedMessage2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+  <span class="token operator">&lt;</span>p<span class="token operator">></span>使用方法后反转字符串<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token function">reversedMessage2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
 
-<script>
-var cnt=1;
-var vm = new Vue({
-  el: '#app',
-  data: {
-    message: 'Runoob!'
-  },
-  computed: {
-    // 计算属性的 getter
-    reversedMessage: function () {
-      // `this` 指向 vm 实例
-      cnt+=1;
-      return cnt+this.message.split('').reverse().join('')
-    }
-  },
-  methods: {
-    reversedMessage2: function () {
-      cnt+=1;
-      return cnt+this.message.split('').reverse().join('')
-    }
-  }
-})
-</script>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+var cnt<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+var vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    message<span class="token operator">:</span> <span class="token string">'Runoob!'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 计算属性的 getter</span>
+    reversedMessage<span class="token operator">:</span> <span class="token function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// `this` 指向 vm 实例</span>
+      cnt<span class="token operator">+=</span><span class="token number">1</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> cnt<span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>message<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+    reversedMessage2<span class="token operator">:</span> <span class="token function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cnt<span class="token operator">+=</span><span class="token number">1</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> cnt<span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>message<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
 
-//执行结果：
+<span class="token comment" spellcheck="true">//执行结果：</span>
 
-原始字符串: Runoob!
+原始字符串<span class="token operator">:</span> Runoob<span class="token operator">!</span>
 
-计算后反转字符串: 2!boonuR
+计算后反转字符串<span class="token operator">:</span> <span class="token number">2</span><span class="token operator">!</span>boonuR
 
-计算后反转字符串: 2!boonuR
+计算后反转字符串<span class="token operator">:</span> <span class="token number">2</span><span class="token operator">!</span>boonuR
 
-使用方法后反转字符串: 3!boonuR
+使用方法后反转字符串<span class="token operator">:</span> <span class="token number">3</span><span class="token operator">!</span>boonuR
 
-使用方法后反转字符串: 4!boonuR</code></pre>
+使用方法后反转字符串<span class="token operator">:</span> <span class="token number">4</span><span class="token operator">!</span>boonuR</code></pre>
 </li>
 </ul>
 
