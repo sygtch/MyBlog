@@ -348,7 +348,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-12-25
+                    2019-12-26
                 </div>
                 
 
@@ -362,7 +362,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
 				
@@ -460,136 +460,128 @@
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
 </li>
 </ul>
-<ul>
-<li><pre class=" language-java"><code class="language-java"></code></pre>
-<div id="app">
-    <div v-if="type === 'A'">
-      A
-    </div>
-    <div v-else-if="type === 'B'">
-      B
-    </div>
-    <div v-else-if="type === 'C'">
-      C
-    </div>
-    <div v-else>
-      Not A/B/C
-    </div>
-</div>
-
-<script>
-new Vue({
-  el: '#app',
-  data: {
-    type: 'C'
-  }
-})
-</script>
-<pre><code>
-
-</code></pre></li>
-</ul>
+<pre class=" language-java"><code class="language-java">  <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>div v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"type === 'A'"</span><span class="token operator">></span>
+          A
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span>div v<span class="token operator">-</span><span class="token keyword">else</span><span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"type === 'B'"</span><span class="token operator">></span>
+          B
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span>div v<span class="token operator">-</span><span class="token keyword">else</span><span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"type === 'C'"</span><span class="token operator">></span>
+          C
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span>div v<span class="token operator">-</span><span class="token keyword">else</span><span class="token operator">></span>
+          Not A<span class="token operator">/</span>B<span class="token operator">/</span>C
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+  <span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+      data<span class="token operator">:</span> <span class="token punctuation">{</span>
+        type<span class="token operator">:</span> <span class="token string">'C'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
 <ul>
 <li><p>v-for循环</p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
-  <span class="token operator">&lt;</span>ol<span class="token operator">></span>
-    <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"site in sites"</span><span class="token operator">></span>
-      <span class="token punctuation">{</span><span class="token punctuation">{</span> site<span class="token punctuation">.</span>name <span class="token punctuation">}</span><span class="token punctuation">}</span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>ol<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-
-<span class="token operator">&lt;</span>script<span class="token operator">></span>
-<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
-  data<span class="token operator">:</span> <span class="token punctuation">{</span>
-    sites<span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'Runoob'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-      <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'Google'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-      <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'Taobao'</span> <span class="token punctuation">}</span>
-    <span class="token punctuation">]</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
-<p>也可以对一个对象迭代：</p>
-<ol>
-<li>如果只有一个值 value，则该值为属性的值，即“菜鸟教程”；</li>
-<li>如果两个值，value仍为值即“菜鸟教程”，key为属性名即“name”;</li>
-<li>如果三个参数，前两个参数同上，第三个为序号索引，即“0”</li>
-</ol>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
-  <span class="token operator">&lt;</span>ul<span class="token operator">></span>
-
-    <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"value in object"</span><span class="token operator">></span>
-    <span class="token punctuation">{</span><span class="token punctuation">{</span> value <span class="token punctuation">}</span><span class="token punctuation">}</span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
-
-    <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(value, key) in object"</span><span class="token operator">></span>
-    <span class="token punctuation">{</span><span class="token punctuation">{</span> key <span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> value <span class="token punctuation">}</span><span class="token punctuation">}</span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
-
-     <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(value, key, index) in object"</span><span class="token operator">></span>
-     <span class="token punctuation">{</span><span class="token punctuation">{</span> index <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">.</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> key <span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> value <span class="token punctuation">}</span><span class="token punctuation">}</span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
-
-    <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"n in 10"</span><span class="token operator">></span>
-     <span class="token punctuation">{</span><span class="token punctuation">{</span> n <span class="token punctuation">}</span><span class="token punctuation">}</span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
-
-  <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-
-<span class="token operator">&lt;</span>script<span class="token operator">></span>
-<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
-  data<span class="token operator">:</span> <span class="token punctuation">{</span>
-    object<span class="token operator">:</span> <span class="token punctuation">{</span>
-      name<span class="token operator">:</span> <span class="token string">'菜鸟教程'</span><span class="token punctuation">,</span>
-      url<span class="token operator">:</span> <span class="token string">'http://www.runoob.com'</span><span class="token punctuation">,</span>
-      slogan<span class="token operator">:</span> <span class="token string">'学的不仅是技术，更是梦想！'</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
-<p>若为集合的遍历：其中item同上面的value，即{ id: 1, name: ‘李斯’ }，而 i 则为序号索引</p>
-<pre class=" language-javascript"><code class="language-javascript">  <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>div<span class="token operator">></span>
-      <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"name"</span><span class="token operator">></span>
-      <span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">"add"</span><span class="token operator">></span>添加<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-    <span class="token operator">&lt;</span>ul<span class="token operator">></span>
-      <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(item, i) in list"</span> <span class="token punctuation">:</span>key<span class="token operator">=</span><span class="token string">"item.id"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"checkbox"</span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token punctuation">{</span>item<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token punctuation">}</span>
+<pre class=" language-java"><code class="language-java">  <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>ol<span class="token operator">></span>
+      <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"site in sites"</span><span class="token operator">></span>
+        <span class="token punctuation">{</span><span class="token punctuation">{</span> site<span class="token punctuation">.</span>name <span class="token punctuation">}</span><span class="token punctuation">}</span>
       <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>ol<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+
+  <span class="token operator">&lt;</span>script<span class="token operator">></span>
+  <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+      sites<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'Runoob'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'Google'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'Taobao'</span> <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+<p>  也可以对一个对象迭代：</p>
+<pre><code>1. 如果只有一个值 value，则该值为属性的值，即“菜鸟教程”；
+2. 如果两个值，value仍为值即“菜鸟教程”，key为属性名即“name”;
+3. 如果三个参数，前两个参数同上，第三个为序号索引，即“0”</code></pre><pre class=" language-java"><code class="language-java">  <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>ul<span class="token operator">></span>
+
+      <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"value in object"</span><span class="token operator">></span>
+      <span class="token punctuation">{</span><span class="token punctuation">{</span> value <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+
+      <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(value, key) in object"</span><span class="token operator">></span>
+      <span class="token punctuation">{</span><span class="token punctuation">{</span> key <span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> value <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+
+       <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(value, key, index) in object"</span><span class="token operator">></span>
+       <span class="token punctuation">{</span><span class="token punctuation">{</span> index <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">.</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> key <span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> value <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+
+      <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"n in 10"</span><span class="token operator">></span>
+       <span class="token punctuation">{</span><span class="token punctuation">{</span> n <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+
     <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>
-<span class="token operator">&lt;</span>script<span class="token operator">></span>
-    <span class="token comment" spellcheck="true">// 创建 Vue 实例，得到 ViewModel</span>
-    <span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-      el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
-      data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        name<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
-        newId<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
-        list<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-          <span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token string">'李斯'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-          <span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token string">'吕不韦'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-          <span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token string">'嬴政'</span> <span class="token punctuation">}</span>
-        <span class="token punctuation">]</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
-      methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-         <span class="token comment" spellcheck="true">//注意这里是unshift</span>
-          <span class="token keyword">this</span><span class="token punctuation">.</span>list<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token operator">++</span><span class="token keyword">this</span><span class="token punctuation">.</span>newId<span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token punctuation">}</span><span class="token punctuation">)</span>
-          <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">''</span>
-        <span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+
+  <span class="token operator">&lt;</span>script<span class="token operator">></span>
+  <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+      object<span class="token operator">:</span> <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'菜鸟教程'</span><span class="token punctuation">,</span>
+        url<span class="token operator">:</span> <span class="token string">'http://www.runoob.com'</span><span class="token punctuation">,</span>
+        slogan<span class="token operator">:</span> <span class="token string">'学的不仅是技术，更是梦想！'</span>
       <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code></pre>
-<p>为了解决checkbox等内容的绑定问题，要加key</p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(item, i) in list"</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"item.id"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"checkbox"</span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token punctuation">{</span>item<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token punctuation">}</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span></code></pre>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+<p>  若为集合的遍历：其中item同上面的value，即{ id: 1, name: ‘李斯’ }，而 i 则为序号索引</p>
+<pre class=" language-java"><code class="language-java">    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"name"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>button <span class="token annotation punctuation">@click</span><span class="token operator">=</span><span class="token string">"add"</span><span class="token operator">></span>添加<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+      <span class="token operator">&lt;</span>ul<span class="token operator">></span>
+        <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(item, i) in list"</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"item.id"</span><span class="token operator">></span>
+          <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"checkbox"</span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token punctuation">{</span>item<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>
+  <span class="token operator">&lt;</span>script<span class="token operator">></span>
+      <span class="token comment" spellcheck="true">// 创建 Vue 实例，得到 ViewModel</span>
+      var vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> <span class="token punctuation">{</span>
+          name<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+          newId<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+          list<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token string">'李斯'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token string">'吕不韦'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token string">'嬴政'</span> <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           <span class="token comment" spellcheck="true">//注意这里是unshift</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>list<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token operator">++</span><span class="token keyword">this</span><span class="token punctuation">.</span>newId<span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">''</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code></pre>
+<p>  为了解决checkbox等内容的绑定问题，要加key</p>
+<pre class=" language-java"><code class="language-java">  <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(item, i) in list"</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"item.id"</span><span class="token operator">></span>
+          <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"checkbox"</span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token punctuation">{</span>item<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span></code></pre>
 </li>
+</ul>
+<ul>
 <li><p>缩写</p>
 <p><strong>v-bind</strong></p>
 <p>Vue.js 为两个最为常用的指令提供了特别的缩写：</p>
@@ -602,14 +594,8 @@ new Vue({
 <span class="token operator">&lt;</span>a v<span class="token operator">-</span>on<span class="token operator">:</span>click<span class="token operator">=</span><span class="token string">"doSomething"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 缩写 <span class="token operator">--</span><span class="token operator">></span>
 <span class="token operator">&lt;</span>a <span class="token annotation punctuation">@click</span><span class="token operator">=</span>"doSo</code></pre>
-</li>
-<li><p>另：</p>
-<ol>
-<li><p>当我们给一个比如 props 中，或者 data 中被观测的对象添加一个新的属性的时候，不能直接添加，必须使用 Vue.set 方法。</p>
-<p>Vue.set 方法用来新增对象的属性。如果要增加属性的对象是响应式的，那该方法可以确保属性被创建后也是响应式的，同时触发视图更新</p>
-</li>
-</ol>
-<p><img src="https://www.runoob.com/wp-content/uploads/2017/10/20170608010237405.png" alt="用Vue.set赋值.png"></p>
+<p>另：</p>
+<p>当我们给一个比如 props 中，或者 data 中被观测的对象添加一个新的属性的时候，不能直接添加，必须使用 Vue.set 方法。Vue.set 方法用来新增对象的属性。如果要增加属性的对象是响应式的，那该方法可以确保属性被创建后也是响应式的，同时触发视图更新<img src="https://www.runoob.com/wp-content/uploads/2017/10/20170608010237405.png" alt="用Vue.set赋值.png"></p>
 </li>
 </ul>
 <h2 id="2-script-中的方法"><a href="#2-script-中的方法" class="headerlink" title="2. script 中的方法"></a>2. script 中的方法</h2><ul>
@@ -1174,7 +1160,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.7k</span>&nbsp;字
+                class="white-color">1.8k</span>&nbsp;字
             
             
             
