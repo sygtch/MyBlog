@@ -5,7 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="haha, Hexo">
-    <meta name="description" content="郭天驰haha1234567@GetMapping(&#34;/fore/&amp;#123;articleId&amp;#125;&#34;)   @ApiOperation(value = &#34;按文章id取所有可显示的评论&#34;, notes = &#34;按文章id取所有可显示的">
+    <meta name="description" content="郭天驰haha @GetMapping(&#34;/fore/{articleId}&#34;)
+ @ApiOperation(value = &#34;按文章id取所有可显示的评论&#34;, notes = &#34;按文章id取所有可显示的评论&#34;)
+ @ApiImplici">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -454,8 +456,13 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="郭天驰"><a href="#郭天驰" class="headerlink" title="郭天驰"></a>郭天驰</h3><h2 id="haha"><a href="#haha" class="headerlink" title="haha"></a>haha</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping</span>(<span class="string">"/fore/&#123;articleId&#125;"</span>)</span><br><span class="line">   <span class="meta">@ApiOperation</span>(value = <span class="string">"按文章id取所有可显示的评论"</span>, notes = <span class="string">"按文章id取所有可显示的评论"</span>)</span><br><span class="line">   <span class="meta">@ApiImplicitParam</span>(value = <span class="string">"按文章id取所有可显示的评论"</span>,name = <span class="string">"articleID"</span>,required = <span class="keyword">true</span>,dataType = <span class="string">"articleID"</span>,paramType = <span class="string">"path"</span>)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> GetBlogCommentsResponse <span class="title">getShowComments</span><span class="params">(String articleID)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> blogCommentService.getShowComments(articleID);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+                <h3 id="郭天驰"><a href="#郭天驰" class="headerlink" title="郭天驰"></a>郭天驰</h3><h2 id="haha"><a href="#haha" class="headerlink" title="haha"></a>haha</h2><pre class=" language-java"><code class="language-java"> <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/fore/{articleId}"</span><span class="token punctuation">)</span>
+ <span class="token annotation punctuation">@ApiOperation</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"按文章id取所有可显示的评论"</span><span class="token punctuation">,</span> notes <span class="token operator">=</span> <span class="token string">"按文章id取所有可显示的评论"</span><span class="token punctuation">)</span>
+ <span class="token annotation punctuation">@ApiImplicitParam</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"按文章id取所有可显示的评论"</span><span class="token punctuation">,</span>name <span class="token operator">=</span> <span class="token string">"articleID"</span><span class="token punctuation">,</span>required <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span>dataType <span class="token operator">=</span> <span class="token string">"articleID"</span><span class="token punctuation">,</span>paramType <span class="token operator">=</span> <span class="token string">"path"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> GetBlogCommentsResponse <span class="token function">getShowComments</span><span class="token punctuation">(</span>String articleID<span class="token punctuation">)</span><span class="token punctuation">{</span>
 
+        <span class="token keyword">return</span> blogCommentService<span class="token punctuation">.</span><span class="token function">getShowComments</span><span class="token punctuation">(</span>articleID<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr/>
