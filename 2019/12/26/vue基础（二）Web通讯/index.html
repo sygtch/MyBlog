@@ -4,10 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="haha, n阶行列式">
-    <meta name="description" content="郭天驰haha @GetMapping(&#34;/fore/{articleId}&#34;)
- @ApiOperation(value = &#34;按文章id取所有可显示的评论&#34;, notes = &#34;按文章id取所有可显示的评论&#34;)
- @ApiImplici">
+    <meta name="keywords" content="vue基础（二）Web通讯, n阶行列式">
+    <meta name="description" content="Vue基础（二）3. web通讯引入ajax（axios）
+
+&amp;lt;script src=&#34;https://cdn.staticfile.org/axios/0.18.0/axios.min.js&#34;&gt;&amp;lt;/script&gt;
+
+
+get方">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>haha | n阶行列式</title>
+    <title>vue基础（二）Web通讯 | n阶行列式</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -283,12 +286,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">haha</h1>
+                    <h1 class="description center-align post-title">vue基础（二）Web通讯</h1>
                 </div>
             </div>
         </div>
@@ -403,25 +406,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E6%B5%8B%E8%AF%95tag1/">
-                                <span class="chip bg-color">测试tag1</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB1/" class="post-category">
-                                测试分类1
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -430,7 +420,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-21
+                    2019-12-26
                 </div>
                 
 
@@ -444,7 +434,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    68
+                    239
                 </div>
                 
 
@@ -467,13 +457,95 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="郭天驰"><a href="#郭天驰" class="headerlink" title="郭天驰"></a>郭天驰</h3><h2 id="haha"><a href="#haha" class="headerlink" title="haha"></a>haha</h2><pre class=" language-java"><code class="language-java"> <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/fore/{articleId}"</span><span class="token punctuation">)</span>
- <span class="token annotation punctuation">@ApiOperation</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"按文章id取所有可显示的评论"</span><span class="token punctuation">,</span> notes <span class="token operator">=</span> <span class="token string">"按文章id取所有可显示的评论"</span><span class="token punctuation">)</span>
- <span class="token annotation punctuation">@ApiImplicitParam</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"按文章id取所有可显示的评论"</span><span class="token punctuation">,</span>name <span class="token operator">=</span> <span class="token string">"articleID"</span><span class="token punctuation">,</span>required <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span>dataType <span class="token operator">=</span> <span class="token string">"articleID"</span><span class="token punctuation">,</span>paramType <span class="token operator">=</span> <span class="token string">"path"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> GetBlogCommentsResponse <span class="token function">getShowComments</span><span class="token punctuation">(</span>String articleID<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <h1 id="Vue基础（二）"><a href="#Vue基础（二）" class="headerlink" title="Vue基础（二）"></a>Vue基础（二）</h1><h2 id="3-web通讯"><a href="#3-web通讯" class="headerlink" title="3. web通讯"></a>3. web通讯</h2><p>引入ajax（axios）</p>
+<blockquote>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://cdn.staticfile.org/axios/0.18.0/axios.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+</blockquote>
+<ul>
+<li><p>get方法</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+  <span class="token punctuation">{</span><span class="token punctuation">{</span> info <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span>script type <span class="token operator">=</span> <span class="token string">"text/javascript"</span><span class="token operator">></span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      info<span class="token operator">:</span> null
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">mounted</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    axios
+      <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'https://www.runoob.com/try/ajax/json_demo.json'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>info <span class="token operator">=</span> response<span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 请求失败处理</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span>h1<span class="token operator">></span>网站列表<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div
+    v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"site in info"</span>
+  <span class="token operator">></span>
+    <span class="token punctuation">{</span><span class="token punctuation">{</span> site<span class="token punctuation">.</span>name <span class="token punctuation">}</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span>script type <span class="token operator">=</span> <span class="token string">"text/javascript"</span><span class="token operator">></span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      info<span class="token operator">:</span> null
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">mounted</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    axios
+      <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'https://www.runoob.com/try/ajax/json_demo.json'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>info <span class="token operator">=</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>sites<span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 请求失败处理</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+<p>get传参格式：</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 直接在 URL 上添加参数 ID=12345</span>
+axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/user?ID=12345'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token keyword">return</span> blogCommentService<span class="token punctuation">.</span><span class="token function">getShowComments</span><span class="token punctuation">(</span>articleID<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span></code></pre>
+<span class="token comment" spellcheck="true">// 也可以通过 params 设置参数：</span>
+axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/user'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    params<span class="token operator">:</span> <span class="token punctuation">{</span>
+      ID<span class="token operator">:</span> <span class="token number">12345</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>post方法</p>
+<pre class=" language-java"><code class="language-java">axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/user'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    firstName<span class="token operator">:</span> <span class="token string">'Fred'</span><span class="token punctuation">,</span>        <span class="token comment" spellcheck="true">// 参数 firstName</span>
+    lastName<span class="token operator">:</span> <span class="token string">'Flintstone'</span>    <span class="token comment" spellcheck="true">// 参数 lastName</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -499,7 +571,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://live4bug.com/child/2019/12/21/haha/">http://live4bug.com/child/2019/12/21/haha/</a>
+                    <a href="http://live4bug.com/child/2019/12/26/vue%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89Web%E9%80%9A%E8%AE%AF/">http://live4bug.com/child/2019/12/26/vue%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89Web%E9%80%9A%E8%AE%AF/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -536,11 +608,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E6%B5%8B%E8%AF%95tag1/">
-                                    <span class="chip bg-color">测试tag1</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -704,9 +772,53 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/12/26/vue%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89Web%E9%80%9A%E8%AE%AF/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="vue基础（二）Web通讯">
+                        
+                        <span class="card-title">vue基础（二）Web通讯</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Vue基础（二）3. web通讯引入ajax（axios）
+
+&lt;script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js">&lt;/script>
+
+
+get方
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            n阶行列式
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2019/12/25/Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
                     <div class="card-image">
@@ -723,9 +835,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -751,58 +863,6 @@
                     
                     <a href="/tags/%E5%9F%BA%E7%A1%80/">
                         <span class="chip bg-color">基础</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/12/21/haha/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="haha">
-                        
-                        <span class="card-title">haha</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            郭天驰haha @GetMapping("/fore/{articleId}")
- @ApiOperation(value = "按文章id取所有可显示的评论", notes = "按文章id取所有可显示的评论")
- @ApiImplici
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-21
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB1/" class="post-category">
-                                    测试分类1
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%B5%8B%E8%AF%95tag1/">
-                        <span class="chip bg-color">测试tag1</span>
                     </a>
                     
                 </div>
