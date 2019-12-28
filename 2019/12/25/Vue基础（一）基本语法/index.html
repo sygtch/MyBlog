@@ -348,14 +348,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-12-26
+                    2019-12-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    1.8k
                 </div>
                 
 
@@ -382,7 +382,11 @@
 <li><p>v-cloak 解决插值表达式的闪烁问题，但是只会覆盖自己的插值表达式，不会覆盖元素的值；v-text没有闪烁问题，会覆盖元素中原本的内容。</p>
 </li>
 <li><p>v-html 会覆盖元素内容，但是会将本身内容进行html渲染</p>
+<pre class=" language-java"><code class="language-java">v<span class="token operator">-</span>bind<span class="token operator">:</span>href   直接绑定；
+v<span class="token operator">-</span>html        将需要绑定的值解析（比如字符里含有html标签，可以被解析）</code></pre>
 </li>
+</ul>
+<ul>
 <li><p>v-bind 绑定 ，<strong>属性绑定，用冒号绑定，只能从model层绑定到view层</strong>（即，script下的message改变，div中的数据也随之改变；但是反之不行）</p>
 <pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
     <span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">5</span><span class="token operator">+</span><span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span>br<span class="token operator">></span>
@@ -602,6 +606,18 @@
 </li>
 </ul>
 <h2 id="2-script-中的方法"><a href="#2-script-中的方法" class="headerlink" title="2. script 中的方法"></a>2. script 中的方法</h2><ul>
+<li><p>插值表达式也可以用来写方法</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>h1<span class="token operator">></span><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token function">hi</span><span class="token punctuation">(</span><span class="token string">'night'</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+
+在<span class="token operator">&lt;</span>script<span class="token operator">></span>中
+    methods<span class="token operator">:</span><span class="token punctuation">{</span>
+        hi<span class="token operator">:</span> <span class="token function">function</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token string">'Good'</span> <span class="token operator">+</span> time <span class="token operator">+</span> <span class="token string">"!"</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//单引号和双引号应该都可以</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+<ul>
 <li><p>过滤器：过滤器函数接受表达式的值作为第一个参数。</p>
 <pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
   <span class="token punctuation">{</span><span class="token punctuation">{</span> message <span class="token operator">|</span> capitalize <span class="token punctuation">}</span><span class="token punctuation">}</span>
@@ -1026,28 +1042,86 @@ var vm <span class="token operator">=</span> <span class="token keyword">new</sp
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/12/25/vue%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89Web%E9%80%9A%E8%AE%AF/">
+                <a href="/2019/12/25/Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
                     <div class="card-image">
                         
-                        <img src="https://www.runoob.com/wp-content/uploads/2017/01/vue.png" class="responsive-img" alt="Vue基础学习(二)">
+                        <img src="https://www.runoob.com/wp-content/uploads/2017/01/vue.png" class="responsive-img" alt="Vue基础（一）基本语法">
                         
-                        <span class="card-title">Vue基础学习(二)</span>
+                        <span class="card-title">Vue基础（一）基本语法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在vue中如何优雅的使用ajax等技术
+                            本来是个正经的后端java，因为项目需要，参照着“菜鸟”简单的学习了一下vue。其功能还是很强大的，浅显的学学，入门挺简单...深了就入坑了。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-25
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">基础</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/12/25/Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89%E7%BB%84%E4%BB%B6%E7%9B%B8%E5%85%B3/">
+                    <div class="card-image">
+                        
+                        <img src="https://www.runoob.com/wp-content/uploads/2017/01/vue.png" class="responsive-img" alt="Vue基础（三）组件相关">
+                        
+                        <span class="card-title">Vue基础（三）组件相关</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            作为一个后端，我感觉学到组件，应该行了...行了吧
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1073,61 +1147,6 @@ var vm <span class="token operator">=</span> <span class="token keyword">new</sp
                     
                     <a href="/tags/%E5%9F%BA%E7%A1%80/">
                         <span class="chip bg-color">基础</span>
-                    </a>
-                    
-                    <a href="/tags/ajax/">
-                        <span class="chip bg-color">ajax</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/12/21/haha/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="haha">
-                        
-                        <span class="card-title">haha</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            郭天驰haha @GetMapping("/fore/{articleId}")
- @ApiOperation(value = "按文章id取所有可显示的评论", notes = "按文章id取所有可显示的评论")
- @ApiImplici
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-21
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB1/" class="post-category">
-                                    测试分类1
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%B5%8B%E8%AF%95tag1/">
-                        <span class="chip bg-color">测试tag1</span>
                     </a>
                     
                 </div>
@@ -1183,7 +1202,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2k</span>&nbsp;字
+                class="white-color">3.2k</span>&nbsp;字
             
             
             

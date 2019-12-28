@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Vue基础学习(二), n阶行列式">
-    <meta name="description" content="在vue中如何优雅的使用ajax等技术">
+    <meta name="keywords" content="Vue基础（四）路由相关, n阶行列式">
+    <meta name="description" content="作为一个后端，我感觉学到组件，应该行了...行了吧">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Vue基础学习(二) | n阶行列式</title>
+    <title>Vue基础（四）路由相关 | n阶行列式</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -286,7 +286,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Vue基础学习(二)</h1>
+                    <h1 class="description center-align post-title">Vue基础（四）路由相关</h1>
                 </div>
             </div>
         </div>
@@ -320,10 +320,6 @@
                                 <span class="chip bg-color">基础</span>
                             </a>
                         
-                            <a href="/tags/ajax/">
-                                <span class="chip bg-color">ajax</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -352,14 +348,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-12-26
+                    2019-12-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    239
+                    225
                 </div>
                 
 
@@ -382,93 +378,65 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Vue基础（二）"><a href="#Vue基础（二）" class="headerlink" title="Vue基础（二）"></a>Vue基础（二）</h1><h2 id="3-web通讯"><a href="#3-web通讯" class="headerlink" title="3. web通讯"></a>3. web通讯</h2><p>引入ajax（axios）</p>
+                <h1 id="Vue基础（四）"><a href="#Vue基础（四）" class="headerlink" title="Vue基础（四）"></a>Vue基础（四）</h1><h1 id="5-路由"><a href="#5-路由" class="headerlink" title="5.路由"></a>5.路由</h1><ul>
+<li><p>若在建立项目初期，未选择路由配置，可在此处<strong>添加router</strong></p>
 <blockquote>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://cdn.staticfile.org/axios/0.18.0/axios.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+<p>npm install vue-router –save-dev</p>
 </blockquote>
-<ul>
-<li><p>get方法</p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
-  <span class="token punctuation">{</span><span class="token punctuation">{</span> info <span class="token punctuation">}</span><span class="token punctuation">}</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-<span class="token operator">&lt;</span>script type <span class="token operator">=</span> <span class="token string">"text/javascript"</span><span class="token operator">></span>
-<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
-  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token punctuation">{</span>
-      info<span class="token operator">:</span> null
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token function">mounted</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    axios
-      <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'https://www.runoob.com/try/ajax/json_demo.json'</span><span class="token punctuation">)</span>
-      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>info <span class="token operator">=</span> response<span class="token punctuation">)</span><span class="token punctuation">)</span>
-      <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 请求失败处理</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
-  <span class="token operator">&lt;</span>h1<span class="token operator">></span>网站列表<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
-  <span class="token operator">&lt;</span>div
-    v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"site in info"</span>
-  <span class="token operator">></span>
-    <span class="token punctuation">{</span><span class="token punctuation">{</span> site<span class="token punctuation">.</span>name <span class="token punctuation">}</span><span class="token punctuation">}</span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-<span class="token operator">&lt;</span>script type <span class="token operator">=</span> <span class="token string">"text/javascript"</span><span class="token operator">></span>
-<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
-  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token punctuation">{</span>
-      info<span class="token operator">:</span> null
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token function">mounted</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    axios
-      <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'https://www.runoob.com/try/ajax/json_demo.json'</span><span class="token punctuation">)</span>
-      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>info <span class="token operator">=</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>sites<span class="token punctuation">)</span><span class="token punctuation">)</span>
-      <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 请求失败处理</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
-<p>get传参格式：</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 直接在 URL 上添加参数 ID=12345</span>
-axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/user?ID=12345'</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>然后自己在 src - router新建index.js文件，配置路由相关。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> Vue from <span class="token string">'vue'</span>
+<span class="token keyword">import</span> Router from <span class="token string">'vue-router'</span>
+<span class="token keyword">import</span> HelloWorld from <span class="token string">'@/components/HelloWorld'</span>
 
-<span class="token comment" spellcheck="true">// 也可以通过 params 设置参数：</span>
-axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/user'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-    params<span class="token operator">:</span> <span class="token punctuation">{</span>
-      ID<span class="token operator">:</span> <span class="token number">12345</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Router<span class="token punctuation">)</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  routes<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      path<span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+      name<span class="token operator">:</span> <span class="token string">'HelloWorld'</span><span class="token punctuation">,</span>
+      component<span class="token operator">:</span> HelloWorld
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">//去掉地址中的#</span>
+    mode<span class="token operator">:</span><span class="token string">"history"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>并在main.js中注册</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> Vue from <span class="token string">'vue'</span>
+<span class="token keyword">import</span> App from <span class="token string">'./App'</span>
+<span class="token comment" spellcheck="true">//引用router</span>
+<span class="token keyword">import</span> router from <span class="token string">'./router'</span>
+
+Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span>
+
+<span class="token comment" spellcheck="true">/* eslint-disable no-new */</span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+<span class="token comment" spellcheck="true">//注册router</span>
+  router<span class="token punctuation">,</span>
+  components<span class="token operator">:</span> <span class="token punctuation">{</span> App <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  template<span class="token operator">:</span> <span class="token string">'&lt;App/>'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>最后在App.vue中添加要展现的内容</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>router<span class="token operator">-</span>view<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>view<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span></code></pre>
 </li>
-<li><p>post方法</p>
-<pre class=" language-java"><code class="language-java">axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/user'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-    firstName<span class="token operator">:</span> <span class="token string">'Fred'</span><span class="token punctuation">,</span>        <span class="token comment" spellcheck="true">// 参数 firstName</span>
-    lastName<span class="token operator">:</span> <span class="token string">'Flintstone'</span>    <span class="token comment" spellcheck="true">// 参数 lastName</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token function">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<li><p><strong>路由的使用：</strong>超链接可以不用<a>标签，避免页面的自动刷新；写法如下：</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>router<span class="token operator">-</span>link to<span class="token operator">=</span><span class="token string">"/hello"</span><span class="token operator">></span>HelloWorld<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span></code></pre>
+</li>
+<li><p><strong>vue自带http请求：vue-resource</strong></p>
+<blockquote>
+<p>npm install vue-resource –save-dev</p>
+</blockquote>
+<p>在main.js中引入vue-resource</p>
+<pre class=" language-java"><code class="language-java"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">import</span> VueResource from <span class="token string">'vue-resource'</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueResource<span class="token punctuation">)</span></code></pre>
 </li>
 </ul>
 
@@ -496,7 +464,7 @@ axios<span class="token punctuation">.</span><span class="token function">get</s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://live4bug.com/2019/12/25/Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89Web%E9%80%9A%E8%AE%AF/">http://live4bug.com/2019/12/25/Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89Web%E9%80%9A%E8%AE%AF/</a>
+                    <a href="http://live4bug.com/2019/12/25/2019-12-25-Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3/">http://live4bug.com/2019/12/25/2019-12-25-Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -544,10 +512,6 @@ axios<span class="token punctuation">.</span><span class="token function">get</s
                             
                                 <a href="/tags/%E5%9F%BA%E7%A1%80/">
                                     <span class="chip bg-color">基础</span>
-                                </a>
-                            
-                                <a href="/tags/ajax/">
-                                    <span class="chip bg-color">ajax</span>
                                 </a>
                             
                         </div>
@@ -743,12 +707,12 @@ axios<span class="token punctuation">.</span><span class="token function">get</s
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/12/25/Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3/">
+                <a href="/2019/12/25/Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89%E7%BB%84%E4%BB%B6%E7%9B%B8%E5%85%B3/">
                     <div class="card-image">
                         
-                        <img src="https://www.runoob.com/wp-content/uploads/2017/01/vue.png" class="responsive-img" alt="Vue基础（四）路由相关">
+                        <img src="https://www.runoob.com/wp-content/uploads/2017/01/vue.png" class="responsive-img" alt="Vue基础（三）组件相关">
                         
-                        <span class="card-title">Vue基础（四）路由相关</span>
+                        <span class="card-title">Vue基础（三）组件相关</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -796,21 +760,21 @@ axios<span class="token punctuation">.</span><span class="token function">get</s
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/25/Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89Web%E9%80%9A%E8%AE%AF/">
+                <a href="/2019/12/25/Vue-Bolg%E9%A1%B9%E7%9B%AE/">
                     <div class="card-image">
                         
-                        <img src="https://www.runoob.com/wp-content/uploads/2017/01/vue.png" class="responsive-img" alt="Vue基础学习(二)">
+                        <img src="https://www.runoob.com/wp-content/uploads/2017/01/vue.png" class="responsive-img" alt="Vue-Blog项目">
                         
-                        <span class="card-title">Vue基础学习(二)</span>
+                        <span class="card-title">Vue-Blog项目</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在vue中如何优雅的使用ajax等技术
+                            本来是个正经的后端java，因为项目需要，参照着“菜鸟”简单的学习了一下vue。其功能还是很强大的，浅显的学学，入门挺简单...深了就入坑了。
                         
                     </div>
                     <div class="publish-info">
@@ -829,7 +793,6 @@ axios<span class="token punctuation">.</span><span class="token function">get</s
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -843,10 +806,6 @@ axios<span class="token punctuation">.</span><span class="token function">get</s
                     
                     <a href="/tags/%E5%9F%BA%E7%A1%80/">
                         <span class="chip bg-color">基础</span>
-                    </a>
-                    
-                    <a href="/tags/ajax/">
-                        <span class="chip bg-color">ajax</span>
                     </a>
                     
                 </div>

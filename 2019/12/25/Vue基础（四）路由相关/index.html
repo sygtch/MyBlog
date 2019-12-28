@@ -4,10 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="haha, n阶行列式">
-    <meta name="description" content="郭天驰haha @GetMapping(&#34;/fore/{articleId}&#34;)
- @ApiOperation(value = &#34;按文章id取所有可显示的评论&#34;, notes = &#34;按文章id取所有可显示的评论&#34;)
- @ApiImplici">
+    <meta name="keywords" content="Vue基础（四）路由相关, n阶行列式">
+    <meta name="description" content="作为一个后端，我感觉学到组件，应该行了...行了吧">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>haha | n阶行列式</title>
+    <title>Vue基础（四）路由相关 | n阶行列式</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -283,12 +281,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://www.runoob.com/wp-content/uploads/2017/01/vue.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">haha</h1>
+                    <h1 class="description center-align post-title">Vue基础（四）路由相关</h1>
                 </div>
             </div>
         </div>
@@ -298,105 +296,10 @@
 
 
 
-<main class="post-container content">
+<main class="container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
-<style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
-
-    #articleContent :focus {
-        outline: none;
-    }
-
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
-
-    .toc-widget {
-        width: 345px;
-        padding-left: 20px;
-    }
-
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
-
-    #toc-content {
-        height: calc(100vh - 250px);
-        overflow: auto;
-    }
-
-    #toc-content ol {
-        padding-left: 10px;
-    }
-
-    #toc-content ol li {
-        padding-left: 10px;
-    }
-
-    #toc-content .toc-link:hover {
-        color: #42b983;
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
-
-    #toc-content .is-active-link {
-        color: #42b983;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
-    }
-
-    #floating-toc-btn {
-        position: fixed;
-        right: 15px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
-
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
-
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+    <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -405,8 +308,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%B5%8B%E8%AF%95tag1/">
-                                <span class="chip bg-color">测试tag1</span>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
+                            </a>
+                        
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">基础</span>
                             </a>
                         
                     </div>
@@ -417,8 +328,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB1/" class="post-category">
-                                测试分类1
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -430,21 +341,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-21
+                    2019-12-25
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-12-26
+                    2019-12-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    68
+                    259
                 </div>
                 
 
@@ -467,13 +378,74 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="郭天驰"><a href="#郭天驰" class="headerlink" title="郭天驰"></a>郭天驰</h3><h2 id="haha"><a href="#haha" class="headerlink" title="haha"></a>haha</h2><pre class=" language-java"><code class="language-java"> <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/fore/{articleId}"</span><span class="token punctuation">)</span>
- <span class="token annotation punctuation">@ApiOperation</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"按文章id取所有可显示的评论"</span><span class="token punctuation">,</span> notes <span class="token operator">=</span> <span class="token string">"按文章id取所有可显示的评论"</span><span class="token punctuation">)</span>
- <span class="token annotation punctuation">@ApiImplicitParam</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"按文章id取所有可显示的评论"</span><span class="token punctuation">,</span>name <span class="token operator">=</span> <span class="token string">"articleID"</span><span class="token punctuation">,</span>required <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span>dataType <span class="token operator">=</span> <span class="token string">"articleID"</span><span class="token punctuation">,</span>paramType <span class="token operator">=</span> <span class="token string">"path"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> GetBlogCommentsResponse <span class="token function">getShowComments</span><span class="token punctuation">(</span>String articleID<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <h1 id="Vue基础（四）"><a href="#Vue基础（四）" class="headerlink" title="Vue基础（四）"></a>Vue基础（四）</h1><h1 id="5-路由"><a href="#5-路由" class="headerlink" title="5.路由"></a>5.路由</h1><ul>
+<li><p>若在建立项目初期，未选择路由配置，可在此处<strong>添加router</strong></p>
+<blockquote>
+<p>npm install vue-router –save-dev</p>
+</blockquote>
+<p>然后自己在 src - router新建index.js文件，配置路由相关。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> Vue from <span class="token string">'vue'</span>
+<span class="token keyword">import</span> Router from <span class="token string">'vue-router'</span>
+<span class="token keyword">import</span> HelloWorld from <span class="token string">'@/components/HelloWorld'</span>
 
-        <span class="token keyword">return</span> blogCommentService<span class="token punctuation">.</span><span class="token function">getShowComments</span><span class="token punctuation">(</span>articleID<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span></code></pre>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Router<span class="token punctuation">)</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  routes<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      path<span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+      name<span class="token operator">:</span> <span class="token string">'HelloWorld'</span><span class="token punctuation">,</span>
+      component<span class="token operator">:</span> HelloWorld
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">//去掉地址中的#</span>
+    mode<span class="token operator">:</span><span class="token string">"history"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>并在main.js中注册</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> Vue from <span class="token string">'vue'</span>
+<span class="token keyword">import</span> App from <span class="token string">'./App'</span>
+<span class="token comment" spellcheck="true">//引用router</span>
+<span class="token keyword">import</span> router from <span class="token string">'./router'</span>
+
+Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span>
+
+<span class="token comment" spellcheck="true">/* eslint-disable no-new */</span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+<span class="token comment" spellcheck="true">//注册router</span>
+  router<span class="token punctuation">,</span>
+  components<span class="token operator">:</span> <span class="token punctuation">{</span> App <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  template<span class="token operator">:</span> <span class="token string">'&lt;App/>'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>最后在App.vue中添加要展现的内容</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>router<span class="token operator">-</span>view<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>view<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span></code></pre>
+</li>
+<li><p><strong>路由的使用：</strong>超链接可以不用<a>标签，避免页面的自动刷新；写法如下：</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>router<span class="token operator">-</span>link to<span class="token operator">=</span><span class="token string">"/hello"</span><span class="token operator">></span>HelloWorld<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span></code></pre>
+</li>
+<li><p><strong>vue自带http请求：vue-resource</strong></p>
+<blockquote>
+<p>npm install vue-resource –save-dev</p>
+</blockquote>
+<p>先在main.js中引入vue-resource</p>
+<pre class=" language-java"><code class="language-java"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">import</span> VueResource from <span class="token string">'vue-resource'</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token comment" spellcheck="true">//use之后，就可以在全局任何地方使用    </span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueResource<span class="token punctuation">)</span></code></pre>
+<p>然后，在组件中：</p>
+<pre class=" language-java"><code class="language-java"><span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$http<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"http://xxxxx"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>users <span class="token operator">=</span> data<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -489,7 +461,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://live4bug.com" rel="external nofollow noreferrer">n阶行列式</a>
+                    <a href="http://live4bug.com" rel="external nofollow noreferrer">郭天驰</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -499,7 +471,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://live4bug.com/2019/12/21/haha/">http://live4bug.com/2019/12/21/haha/</a>
+                    <a href="http://live4bug.com/2019/12/25/Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3/">http://live4bug.com/2019/12/25/Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -512,7 +484,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="http://live4bug.com" target="_blank">n阶行列式</a>
+                    <a href="http://live4bug.com" target="_blank">郭天驰</a>
                     !
                 </span>
             </div>
@@ -537,8 +509,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%B5%8B%E8%AF%95tag1/">
-                                    <span class="chip bg-color">测试tag1</span>
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
+                                </a>
+                            
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">基础</span>
                                 </a>
                             
                         </div>
@@ -709,7 +689,7 @@
         repo: 'sygtch.github.io',
         owner: 'sygtch',
         admin: "sygtch",
-        id: '2019-12-21T15-19-08',
+        id: '2019-12-25T00-00-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -734,12 +714,12 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/12/25/Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
+                <a href="/2019/12/25/Vue-Bolg%E9%A1%B9%E7%9B%AE/">
                     <div class="card-image">
                         
-                        <img src="https://www.runoob.com/wp-content/uploads/2017/01/vue.png" class="responsive-img" alt="Vue基础（一）基本语法">
+                        <img src="https://www.runoob.com/wp-content/uploads/2017/01/vue.png" class="responsive-img" alt="Vue-Blog项目">
                         
-                        <span class="card-title">Vue基础（一）基本语法</span>
+                        <span class="card-title">Vue-Blog项目</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -787,48 +767,56 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/21/haha/">
+                <a href="/2019/12/25/Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89Web%E9%80%9A%E8%AE%AF/">
                     <div class="card-image">
                         
+                        <img src="https://www.runoob.com/wp-content/uploads/2017/01/vue.png" class="responsive-img" alt="Vue基础学习(二)">
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="haha">
-                        
-                        <span class="card-title">haha</span>
+                        <span class="card-title">Vue基础学习(二)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            郭天驰haha @GetMapping("/fore/{articleId}")
- @ApiOperation(value = "按文章id取所有可显示的评论", notes = "按文章id取所有可显示的评论")
- @ApiImplici
+                            在vue中如何优雅的使用ajax等技术
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-25
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB1/" class="post-category">
-                                    测试分类1
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%B5%8B%E8%AF%95tag1/">
-                        <span class="chip bg-color">测试tag1</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">基础</span>
+                    </a>
+                    
+                    <a href="/tags/ajax/">
+                        <span class="chip bg-color">ajax</span>
                     </a>
                     
                 </div>
@@ -867,100 +855,6 @@
 code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
 </style>
 
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
-
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).show();
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
-
     
 
 </main>
@@ -978,7 +872,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2k</span>&nbsp;字
+                class="white-color">3.2k</span>&nbsp;字
             
             
             
