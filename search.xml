@@ -62,35 +62,6 @@
     
     
     <entry>
-      <title>Vue基础（四）路由相关</title>
-      <link href="/2019/12/25/2019-12-25-Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3/"/>
-      <url>/2019/12/25/2019-12-25-Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Vue基础（四）"><a href="#Vue基础（四）" class="headerlink" title="Vue基础（四）"></a>Vue基础（四）</h1><h1 id="5-路由"><a href="#5-路由" class="headerlink" title="5.路由"></a>5.路由</h1><ul><li><p>若在建立项目初期，未选择路由配置，可在此处<strong>添加router</strong></p><blockquote><p>npm install vue-router –save-dev</p></blockquote><p>然后自己在 src - router新建index.js文件，配置路由相关。</p><pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> Vue from <span class="token string">'vue'</span><span class="token keyword">import</span> Router from <span class="token string">'vue-router'</span><span class="token keyword">import</span> HelloWorld from <span class="token string">'@/components/HelloWorld'</span>Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Router<span class="token punctuation">)</span><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">{</span>  routes<span class="token operator">:</span> <span class="token punctuation">[</span>    <span class="token punctuation">{</span>      path<span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>      name<span class="token operator">:</span> <span class="token string">'HelloWorld'</span><span class="token punctuation">,</span>      component<span class="token operator">:</span> HelloWorld    <span class="token punctuation">}</span><span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">//去掉地址中的#</span>    mode<span class="token operator">:</span><span class="token string">"history"</span>  <span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre><p>并在main.js中注册</p><pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> Vue from <span class="token string">'vue'</span><span class="token keyword">import</span> App from <span class="token string">'./App'</span><span class="token comment" spellcheck="true">//引用router</span><span class="token keyword">import</span> router from <span class="token string">'./router'</span>Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span><span class="token comment" spellcheck="true">/* eslint-disable no-new */</span><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">//注册router</span>  router<span class="token punctuation">,</span>  components<span class="token operator">:</span> <span class="token punctuation">{</span> App <span class="token punctuation">}</span><span class="token punctuation">,</span>  template<span class="token operator">:</span> <span class="token string">'&lt;App/>'</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre><p>最后在App.vue中添加要展现的内容</p><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>template<span class="token operator">></span>  <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>    <span class="token operator">&lt;</span>router<span class="token operator">-</span>view<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>view<span class="token operator">></span>  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span></code></pre></li><li><p><strong>路由的使用：</strong>超链接可以不用<a>标签，避免页面的自动刷新；写法如下：</p><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>router<span class="token operator">-</span>link to<span class="token operator">=</span><span class="token string">"/hello"</span><span class="token operator">></span>HelloWorld<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span></code></pre></li><li><p><strong>vue自带http请求：vue-resource</strong></p><blockquote><p>npm install vue-resource –save-dev</p></blockquote><p>在main.js中引入vue-resource</p><pre class=" language-java"><code class="language-java"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token keyword">import</span> VueResource from <span class="token string">'vue-resource'</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueResource<span class="token punctuation">)</span></code></pre></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 前端 </tag>
-            
-            <tag> vue </tag>
-            
-            <tag> 基础 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Vue-Blog项目</title>
       <link href="/2019/12/25/Vue-Bolg%E9%A1%B9%E7%9B%AE/"/>
       <url>/2019/12/25/Vue-Bolg%E9%A1%B9%E7%9B%AE/</url>
