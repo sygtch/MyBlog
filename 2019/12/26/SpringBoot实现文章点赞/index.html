@@ -281,7 +281,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://q3ofvb9yz.bkt.clouddn.com/%E7%82%B9%E8%B5%9E.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://upload-images.jianshu.io/upload_images/19860184-e6fd7683e25c3215.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -359,14 +359,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    9 分
                 </div>
                 
 				
@@ -398,8 +398,7 @@
          <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>data<span class="token operator">-</span>redis<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
      <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span></code></pre>
 <p>在maven引入依赖后，对redis进行相关配置</p>
-<pre class=" language-java"><code class="language-java">
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>fasterxml<span class="token punctuation">.</span>jackson<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>JsonAutoDetect<span class="token punctuation">;</span>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> com<span class="token punctuation">.</span>fasterxml<span class="token punctuation">.</span>jackson<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>JsonAutoDetect<span class="token punctuation">;</span>
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>fasterxml<span class="token punctuation">.</span>jackson<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>PropertyAccessor<span class="token punctuation">;</span>
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>fasterxml<span class="token punctuation">.</span>jackson<span class="token punctuation">.</span>databind<span class="token punctuation">.</span>ObjectMapper<span class="token punctuation">;</span>
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>autoconfigure<span class="token punctuation">.</span>condition<span class="token punctuation">.</span>ConditionalOnMissingBean<span class="token punctuation">;</span>
@@ -409,121 +408,118 @@
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>core<span class="token punctuation">.</span>RedisTemplate<span class="token punctuation">;</span>
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>core<span class="token punctuation">.</span>StringRedisTemplate<span class="token punctuation">;</span>
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>serializer<span class="token punctuation">.</span>Jackson2JsonRedisSerializer<span class="token punctuation">;</span>
-
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>net<span class="token punctuation">.</span>UnknownHostException<span class="token punctuation">;</span>
 
-</code></pre>
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RedisConfig</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token annotation punctuation">@ConditionalOnMissingBean</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"redisTemplate"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> <span class="token function">redisTemplate</span><span class="token punctuation">(</span>
+            RedisConnectionFactory redisConnectionFactory<span class="token punctuation">)</span>
+            <span class="token keyword">throws</span> UnknownHostException <span class="token punctuation">{</span>
+
+        Jackson2JsonRedisSerializer<span class="token operator">&lt;</span>Object<span class="token operator">></span> jackson2JsonRedisSerializer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Jackson2JsonRedisSerializer</span><span class="token operator">&lt;</span>Object<span class="token operator">></span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ObjectMapper om <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectMapper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        om<span class="token punctuation">.</span><span class="token function">setVisibility</span><span class="token punctuation">(</span>PropertyAccessor<span class="token punctuation">.</span>ALL<span class="token punctuation">,</span> JsonAutoDetect<span class="token punctuation">.</span>Visibility<span class="token punctuation">.</span>ANY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        om<span class="token punctuation">.</span><span class="token function">enableDefaultTyping</span><span class="token punctuation">(</span>ObjectMapper<span class="token punctuation">.</span>DefaultTyping<span class="token punctuation">.</span>NON_FINAL<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jackson2JsonRedisSerializer<span class="token punctuation">.</span><span class="token function">setObjectMapper</span><span class="token punctuation">(</span>om<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> template <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RedisTemplate</span><span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        template<span class="token punctuation">.</span><span class="token function">setConnectionFactory</span><span class="token punctuation">(</span>redisConnectionFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        template<span class="token punctuation">.</span><span class="token function">setKeySerializer</span><span class="token punctuation">(</span>jackson2JsonRedisSerializer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        template<span class="token punctuation">.</span><span class="token function">setValueSerializer</span><span class="token punctuation">(</span>jackson2JsonRedisSerializer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        template<span class="token punctuation">.</span><span class="token function">setHashKeySerializer</span><span class="token punctuation">(</span>jackson2JsonRedisSerializer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        template<span class="token punctuation">.</span><span class="token function">setHashValueSerializer</span><span class="token punctuation">(</span>jackson2JsonRedisSerializer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        template<span class="token punctuation">.</span><span class="token function">afterPropertiesSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> template<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token annotation punctuation">@ConditionalOnMissingBean</span><span class="token punctuation">(</span>StringRedisTemplate<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> StringRedisTemplate <span class="token function">stringRedisTemplate</span><span class="token punctuation">(</span>
+            RedisConnectionFactory redisConnectionFactory<span class="token punctuation">)</span>
+            <span class="token keyword">throws</span> UnknownHostException <span class="token punctuation">{</span>
+        StringRedisTemplate template <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringRedisTemplate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        template<span class="token punctuation">.</span><span class="token function">setConnectionFactory</span><span class="token punctuation">(</span>redisConnectionFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> template<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>配置文件也要写一下：</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># Redis配置</span>
+
+   spring.redis.host=127.0.0.1
+   <span class="token key atrule">spring.redis.port</span><span class="token punctuation">:</span> <span class="token number">6379</span></code></pre>
 </li>
 </ol>
-<p>   @Configuration<br>   public class RedisConfig {</p>
-<pre><code>   @Bean
-   @ConditionalOnMissingBean(name = &quot;redisTemplate&quot;)
-   public RedisTemplate&lt;String, Object&gt; redisTemplate(
-           RedisConnectionFactory redisConnectionFactory)
-           throws UnknownHostException {
-
-       Jackson2JsonRedisSerializer&lt;Object&gt; jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer&lt;Object&gt;(Object.class);
-       ObjectMapper om = new ObjectMapper();
-       om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
-       om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
-       jackson2JsonRedisSerializer.setObjectMapper(om);
-
-       RedisTemplate&lt;String, Object&gt; template = new RedisTemplate&lt;String, Object&gt;();
-       template.setConnectionFactory(redisConnectionFactory);
-       template.setKeySerializer(jackson2JsonRedisSerializer);
-       template.setValueSerializer(jackson2JsonRedisSerializer);
-       template.setHashKeySerializer(jackson2JsonRedisSerializer);
-       template.setHashValueSerializer(jackson2JsonRedisSerializer);
-       template.afterPropertiesSet();
-       return template;
-   }
-
-
-   @Bean
-   @ConditionalOnMissingBean(StringRedisTemplate.class)
-   public StringRedisTemplate stringRedisTemplate(
-           RedisConnectionFactory redisConnectionFactory)
-           throws UnknownHostException {
-       StringRedisTemplate template = new StringRedisTemplate();
-       template.setConnectionFactory(redisConnectionFactory);
-       return template;
-   }</code></pre><p>   }</p>
-<pre><code>
-   配置文件也要写一下：
-
-   ```yaml
-   # Redis配置
-   spring.redis.host=127.0.0.1
-   spring.redis.port: 6379</code></pre><p>   Service层的redis操作稍后再说</p>
-<ol start="2">
+<pre><code>   Service层的redis操作稍后再说。</code></pre><ol start="2">
 <li><p>定时任务相关</p>
 <p>一样的，引入定时的依赖：</p>
-<pre class=" language-java"><code class="language-java">        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>定时任务<span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>quartz<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span></code></pre>
+<pre class=" language-java"><code class="language-java">       <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>定时任务<span class="token operator">--</span><span class="token operator">></span>
+       <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+           <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+           <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>quartz<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+       <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span></code></pre>
 <p>并配置：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> com<span class="token punctuation">.</span>hanor<span class="token punctuation">.</span>blog<span class="token punctuation">.</span>quartz<span class="token punctuation">.</span>LikeTask<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>quartz<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Bean<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Configuration<span class="token punctuation">;</span>
+<pre class=" language-java"><code class="language-java">   <span class="token keyword">import</span> com<span class="token punctuation">.</span>hanor<span class="token punctuation">.</span>blog<span class="token punctuation">.</span>quartz<span class="token punctuation">.</span>LikeTask<span class="token punctuation">;</span>
+   <span class="token keyword">import</span> org<span class="token punctuation">.</span>quartz<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+   <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Bean<span class="token punctuation">;</span>
+   <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Configuration<span class="token punctuation">;</span>
 
-</code></pre>
+   <span class="token annotation punctuation">@Configuration</span>
+   <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">QuartzConfig</span> <span class="token punctuation">{</span>
+
+       <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String LIKE_TASK_IDENTITY <span class="token operator">=</span> <span class="token string">"LikeTaskQuartz"</span><span class="token punctuation">;</span>
+
+       <span class="token annotation punctuation">@Bean</span>
+       <span class="token keyword">public</span> JobDetail <span class="token function">quartzDetail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+           <span class="token keyword">return</span> JobBuilder<span class="token punctuation">.</span><span class="token function">newJob</span><span class="token punctuation">(</span>LikeTask<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withIdentity</span><span class="token punctuation">(</span>LIKE_TASK_IDENTITY<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">storeDurably</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+
+       <span class="token annotation punctuation">@Bean</span>
+       <span class="token keyword">public</span> Trigger <span class="token function">quartzTrigger</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+           SimpleScheduleBuilder scheduleBuilder <span class="token operator">=</span> SimpleScheduleBuilder<span class="token punctuation">.</span><span class="token function">simpleSchedule</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                   <span class="token punctuation">.</span><span class="token function">withIntervalInSeconds</span><span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//设置时间周期单位秒,这样效果更明显</span>
+                   <span class="token comment" spellcheck="true">//.withIntervalInHours(2)  //两个小时执行一次</span>
+                   <span class="token punctuation">.</span><span class="token function">repeatForever</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+           <span class="token keyword">return</span> TriggerBuilder<span class="token punctuation">.</span><span class="token function">newTrigger</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forJob</span><span class="token punctuation">(</span><span class="token function">quartzDetail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                   <span class="token punctuation">.</span><span class="token function">withIdentity</span><span class="token punctuation">(</span>LIKE_TASK_IDENTITY<span class="token punctuation">)</span>
+                   <span class="token punctuation">.</span><span class="token function">withSchedule</span><span class="token punctuation">(</span>scheduleBuilder<span class="token punctuation">)</span>
+                   <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span></code></pre>
+<p>制定任务：</p>
+<pre class=" language-java"><code class="language-java">   <span class="token keyword">import</span> com<span class="token punctuation">.</span>hanor<span class="token punctuation">.</span>blog<span class="token punctuation">.</span>service<span class="token punctuation">.</span>LikedService<span class="token punctuation">;</span>
+   <span class="token keyword">import</span> org<span class="token punctuation">.</span>quartz<span class="token punctuation">.</span>JobExecutionContext<span class="token punctuation">;</span>
+   <span class="token keyword">import</span> org<span class="token punctuation">.</span>quartz<span class="token punctuation">.</span>JobExecutionException<span class="token punctuation">;</span>
+   <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Autowired<span class="token punctuation">;</span>
+   <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>scheduling<span class="token punctuation">.</span>quartz<span class="token punctuation">.</span>QuartzJobBean<span class="token punctuation">;</span>
+   <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span>Component<span class="token punctuation">;</span>
+
+   <span class="token keyword">import</span> java<span class="token punctuation">.</span>text<span class="token punctuation">.</span>SimpleDateFormat<span class="token punctuation">;</span>
+
+   <span class="token comment" spellcheck="true">/**
+    * 点赞的定时任务
+    */</span>
+   <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LikeTask</span> <span class="token keyword">extends</span> <span class="token class-name">QuartzJobBean</span> <span class="token punctuation">{</span>
+
+       <span class="token annotation punctuation">@Autowired</span>
+       <span class="token keyword">private</span> LikedService likedService<span class="token punctuation">;</span>
+
+       <span class="token keyword">private</span> SimpleDateFormat sdf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token annotation punctuation">@Override</span>
+       <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">executeInternal</span><span class="token punctuation">(</span>JobExecutionContext jobExecutionContext<span class="token punctuation">)</span> <span class="token keyword">throws</span> JobExecutionException <span class="token punctuation">{</span>
+
+           System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"-----------quartz------------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+           <span class="token comment" spellcheck="true">//将 Redis 里的点赞信息同步到数据库里</span>
+           likedService<span class="token punctuation">.</span><span class="token function">transLikedFromRedis2DB</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+           likedService<span class="token punctuation">.</span><span class="token function">transLikedCountFromRedis2DB</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span></code></pre>
 </li>
 </ol>
-<p>   @Configuration<br>   public class QuartzConfig {</p>
-<pre><code>   private static final String LIKE_TASK_IDENTITY = &quot;LikeTaskQuartz&quot;;
-
-   @Bean
-   public JobDetail quartzDetail(){
-       return JobBuilder.newJob(LikeTask.class).withIdentity(LIKE_TASK_IDENTITY).storeDurably().build();
-   }
-
-   @Bean
-   public Trigger quartzTrigger(){
-       SimpleScheduleBuilder scheduleBuilder = SimpleScheduleBuilder.simpleSchedule()
-               .withIntervalInSeconds(60)  //设置时间周期单位秒,这样效果更明显
-               //.withIntervalInHours(2)  //两个小时执行一次
-               .repeatForever();
-       return TriggerBuilder.newTrigger().forJob(quartzDetail())
-               .withIdentity(LIKE_TASK_IDENTITY)
-               .withSchedule(scheduleBuilder)
-               .build();
-   }</code></pre><p>   }</p>
-<pre><code>
-   制定任务：
-
-   ```java
-
-   import com.hanor.blog.service.LikedService;
-   import org.quartz.JobExecutionContext;
-   import org.quartz.JobExecutionException;
-   import org.springframework.beans.factory.annotation.Autowired;
-   import org.springframework.scheduling.quartz.QuartzJobBean;
-   import org.springframework.stereotype.Component;
-
-   import java.text.SimpleDateFormat;
-
-   /**
-    * 点赞的定时任务
-    */
-   public class LikeTask extends QuartzJobBean {
-
-       @Autowired
-       private LikedService likedService;
-
-       private SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
-
-       @Override
-       protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-
-           System.out.println(&quot;-----------quartz------------&quot;);
-           //将 Redis 里的点赞信息同步到数据库里
-           likedService.transLikedFromRedis2DB();
-           likedService.transLikedCountFromRedis2DB();
-       }
-   }</code></pre><ol start="3">
+<ol start="3">
 <li><p>数据库表结构的设计</p>
 <p>因为博客项目算是个小项目了，这里为了演示方便，点赞这个模块就先以简易为主。</p>
 <p>liked_user_id为被赞者，liked_post_id为发出者。</p>
@@ -557,41 +553,39 @@
     <span class="token punctuation">}</span>
     <span class="token comment" spellcheck="true">//getter setter</span>
 <span class="token punctuation">}</span></code></pre>
+<p>其中，用了枚举。</p>
+<pre class=" language-java"><code class="language-java"> <span class="token comment" spellcheck="true">/**
+     * 用户点赞的状态
+  */</span>
+<span class="token keyword">public</span> <span class="token keyword">enum</span> LikedStatusEnum <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * 点赞
+     */</span>
+    <span class="token function">LIKE</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"点赞"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">/**
+     * 取消赞
+     */</span>
+    <span class="token function">UNLIKE</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"取消点赞/未点赞"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> Integer code<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> String msg<span class="token punctuation">;</span>
+
+    <span class="token function">LikedStatusEnum</span><span class="token punctuation">(</span>Integer code<span class="token punctuation">,</span> String msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> code<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> Integer <span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>code<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> String <span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>最终的表，是这个样子的：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/19860184-f426870ca9d9cfd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="点赞表"></p>
 </li>
-</ol>
-<p>   其中，用了枚举。</p>
-<pre class=" language-java"><code class="language-java">   <span class="token comment" spellcheck="true">/**
-    * 用户点赞的状态
-    */</span>
-   <span class="token keyword">public</span> <span class="token keyword">enum</span> LikedStatusEnum <span class="token punctuation">{</span>
-       <span class="token comment" spellcheck="true">/**
-        * 点赞
-        */</span>
-       <span class="token function">LIKE</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"点赞"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-       <span class="token comment" spellcheck="true">/**
-        * 取消赞
-        */</span>
-       <span class="token function">UNLIKE</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"取消点赞/未点赞"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-       <span class="token keyword">private</span> Integer code<span class="token punctuation">;</span>
-
-       <span class="token keyword">private</span> String msg<span class="token punctuation">;</span>
-
-       <span class="token function">LikedStatusEnum</span><span class="token punctuation">(</span>Integer code<span class="token punctuation">,</span> String msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-           <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> code<span class="token punctuation">;</span>
-           <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg<span class="token punctuation">;</span>
-       <span class="token punctuation">}</span>
-       <span class="token keyword">public</span> Integer <span class="token function">getCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-           <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>code<span class="token punctuation">;</span>
-       <span class="token punctuation">}</span>
-
-       <span class="token keyword">public</span> String <span class="token function">getMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-           <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token punctuation">;</span>
-       <span class="token punctuation">}</span>
-   <span class="token punctuation">}</span></code></pre>
-<p>   最终的表，是这个样子的：</p>
-<p>   <img src="http://q3ofvb9yz.bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E5%BA%93_%E8%A1%A8%E8%AE%BE%E8%AE%A1_%E7%82%B9%E8%B5%9E.png" alt="点赞表"></p>
-<ol start="4">
 <li><p>具体实现业务逻辑</p>
 <p>这里有两点：<strong>第一是，先把用户的“赞”存在缓存层；第二，适当的时间，将缓存的数据拿出，进行持久化操作。</strong></p>
 <p>考虑到redis存储的特点，选用hash的形式对“用户点赞操作”及“用户被点赞数量”两项进行存储。采用hash的具体原因：把点赞造成的不同影响，储存为不同分区，方便管理。</p>
@@ -830,15 +824,13 @@
     <span class="token punctuation">}</span></code></pre>
 <p>发送值为：</p>
 <pre class=" language-java"><code class="language-java"><span class="token punctuation">{</span>
-
         <span class="token string">"likedUserId"</span><span class="token operator">:</span><span class="token string">"123"</span><span class="token punctuation">,</span>
         <span class="token string">"likedPostId"</span><span class="token operator">:</span><span class="token string">"456"</span>
-
 <span class="token punctuation">}</span></code></pre>
 <p>此时缓存中可见：</p>
-<p><img src="http://q3ofvb9yz.bkt.clouddn.com/redis_manger.png" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/19860184-50ad4050f1d8cc3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>过了一会，缓存数据将被存进数据库中：缓存中没有数据，且值被写入数据库。</p>
-<p><img src="http://q3ofvb9yz.bkt.clouddn.com/blog_%E6%95%B0%E6%8D%AE%E5%BA%93_%E7%BB%93%E6%9E%9C%E5%9B%BE.png" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/19860184-c0ad37bfc244af80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 </li>
 </ol>
 <p>至此，点赞完成！！！撒花<em>★,°</em>:.☆(￣▽￣)/$:<em>.°★</em> 。</p>
@@ -1118,7 +1110,7 @@
                 <a href="/2019/12/26/SpringBoot%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E7%82%B9%E8%B5%9E/">
                     <div class="card-image">
                         
-                        <img src="http://q3ofvb9yz.bkt.clouddn.com/%E7%82%B9%E8%B5%9E.jpg" class="responsive-img" alt="SpringBoot实现文章点赞">
+                        <img src="https://upload-images.jianshu.io/upload_images/19860184-e6fd7683e25c3215.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="SpringBoot实现文章点赞">
                         
                         <span class="card-title">SpringBoot实现文章点赞</span>
                     </div>
