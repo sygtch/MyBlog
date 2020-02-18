@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="建虚拟机后的常规配置, n阶行列式">
-    <meta name="description" content="为了建FastDFS，先在虚拟机上试试">
+    <meta name="keywords" content="freemarker基础, n阶行列式">
+    <meta name="description" content="哈哈学了好多前端的知识，听说freemarker还是很主流的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
 	<!--简书图床-->
 	<meta name="referrer" content="no-referrer"/>
 	
-    <title>建虚拟机后的常规配置 | n阶行列式</title>
+    <title>freemarker基础 | n阶行列式</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -284,12 +284,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://www.fmi.com.cn/uploadfile/2018/1025/20181025091513467.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://upload-images.jianshu.io/upload_images/19860184-558011011dfe8eb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">建虚拟机后的常规配置</h1>
+                    <h1 class="description center-align post-title">freemarker基础</h1>
                 </div>
             </div>
         </div>
@@ -311,16 +311,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                                <span class="chip bg-color">服务器</span>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
                             </a>
                         
-                            <a href="/tags/%E5%AE%89%E8%A3%85/">
-                                <span class="chip bg-color">安装</span>
+                            <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">基础</span>
                             </a>
                         
-                            <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                                <span class="chip bg-color">虚拟机</span>
+                            <a href="/tags/freemarker/">
+                                <span class="chip bg-color">freemarker</span>
                             </a>
                         
                     </div>
@@ -331,8 +331,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-category">
-                                服务器
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -344,7 +344,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-01-26
+                    2020-01-03
                 </div>
                 
 
@@ -358,7 +358,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    151
+                    241
                 </div>
                 
 
@@ -381,28 +381,66 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="建虚拟机后的常规配置"><a href="#建虚拟机后的常规配置" class="headerlink" title="建虚拟机后的常规配置"></a>建虚拟机后的常规配置</h1><ol>
-<li><p>网络配置：</p>
-<pre class=" language-java"><code class="language-java">vi <span class="token operator">/</span>etc<span class="token operator">/</span>sysconfig<span class="token operator">/</span>network<span class="token operator">-</span>scripts<span class="token operator">/</span>ifcfg<span class="token operator">-</span>ens33</code></pre>
-<p>修改最后的onboot属性为yes（按 i 修改，按 Esc 退出编辑，按 :wq 保存并退出）。</p>
-<pre class=" language-java"><code class="language-java"># 若想让ip固定不变，则继续修改ifcfg<span class="token operator">-</span>ens33
-# 将BOOTPROTO改为<span class="token keyword">static</span>，加一项IPADDR<span class="token operator">=</span><span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">31.132</span>
-# 重启网络服务
-service network restart
-#查看inet即可知道本机ip
-ip addr</code></pre>
+                <h1 id="freemarker基础"><a href="#freemarker基础" class="headerlink" title="freemarker基础"></a>freemarker基础</h1><ol>
+<li><p>注释,&lt;#–    –&gt;</p>
+</li>
+<li><p>插值，${name}</p>
+</li>
+<li><p>FTL指令：</p>
+<pre class=" language-html"><code class="language-html">遍历list:
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#list</span> <span class="token attr-name">students</span> <span class="token attr-name">as</span> <span class="token attr-name">stu</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>${stu_index}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>${stu.name}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#list</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
+    集合students的大小：${students?size}
+
+map:
+    方法1：直接取对象
+        姓名：${stuMap['stu1'].name}
+    方法2：直接取key（把对象当作key）
+        姓名：${stuMap.stu1.name}
+    方法3：取出所有key，用list遍历
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#list</span> <span class="token attr-name">stuMap?key</span> <span class="token attr-name">as</span> <span class="token attr-name">k</span><span class="token punctuation">></span></span>
+            姓名：${stuMap[k].name}  此处不能用方法2的“.”
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#list</span><span class="token punctuation">></span></span>
+</code></pre>
 </li>
 </ol>
-<ol start="2">
-<li><p>赋予操作权限：</p>
-<pre class=" language-java"><code class="language-java">chmod <span class="token number">777</span> <span class="token operator">/</span>etc<span class="token operator">/</span>guotianchi</code></pre>
+<ol start="4">
+<li><p>if</p>
+<pre class=" language-html"><code class="language-html">&lt;td &lt;#if stu.name == '小明'>style="background:red;"<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#if</span><span class="token punctuation">></span></span>>ahha<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+注：大于比较用 gt
+
+空值处理,方法1：
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#if</span> <span class="token attr-name">stus??</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#list</span> <span class="token attr-name">stus</span> <span class="token attr-name">as</span> <span class="token attr-name">s</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#list</span><span class="token punctuation">></span></span>   
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#if</span><span class="token punctuation">></span></span>
+    方法2：缺省值，如果stuhuofirst或name为空，则显示‘’
+        ${(stu.first.name)!''}</code></pre>
 </li>
 </ol>
-<ol start="3">
-<li><p>关闭防火墙</p>
-<pre class=" language-java"><code class="language-java">systemctl stop firewalld<span class="token punctuation">.</span>service #停止firewall
-systemctl disable firewalld<span class="token punctuation">.</span>service #禁止firewall开机启动
-firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>state #查看默认防火墙状态（关闭后显示notrunning，开启后显示running）</code></pre>
+<ol start="5">
+<li><p>日期格式化</p>
+<pre class=" language-html"><code class="language-html">年月日：${today?date}
+时分秒：${today?time}
+日期和时间：${today?datetime}
+自定义格式化：${today?string("yyyy年MM月dd日")}</code></pre>
+</li>
+</ol>
+<ol start="6">
+<li><p>数字转字符串</p>
+<pre class=" language-html"><code class="language-html">${point?c}</code></pre>
+</li>
+</ol>
+<ol start="7">
+<li><p>json转对象</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#assign</span> <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{<span class="token punctuation">'</span>bank:<span class="token punctuation">'</span>银行<span class="token punctuation">'</span>,<span class="token punctuation">'</span>account<span class="token punctuation">'</span>:<span class="token punctuation">'</span>123456<span class="token punctuation">'</span>}<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#assign</span> <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation">=</span>text?eval</span> <span class="token punctuation">/></span></span>
+开户行：${data.bank}</code></pre>
 </li>
 </ol>
 
@@ -430,7 +468,7 @@ firewall<span class="token operator">-</span>cmd <span class="token operator">--
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://live4bug.com/2019/01/26/%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%90%8E%E7%9A%84%E5%B8%B8%E8%A7%84%E9%85%8D%E7%BD%AE/">http://live4bug.com/2019/01/26/%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%90%8E%E7%9A%84%E5%B8%B8%E8%A7%84%E9%85%8D%E7%BD%AE/</a>
+                    <a href="http://live4bug.com/2020/01/03/freemarker%E5%9F%BA%E7%A1%80/">http://live4bug.com/2020/01/03/freemarker%E5%9F%BA%E7%A1%80/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -468,16 +506,16 @@ firewall<span class="token operator">-</span>cmd <span class="token operator">--
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                                    <span class="chip bg-color">服务器</span>
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
                                 </a>
                             
-                                <a href="/tags/%E5%AE%89%E8%A3%85/">
-                                    <span class="chip bg-color">安装</span>
+                                <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">基础</span>
                                 </a>
                             
-                                <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                                    <span class="chip bg-color">虚拟机</span>
+                                <a href="/tags/freemarker/">
+                                    <span class="chip bg-color">freemarker</span>
                                 </a>
                             
                         </div>
@@ -648,7 +686,7 @@ firewall<span class="token operator">-</span>cmd <span class="token operator">--
         repo: 'sygtch.github.io',
         owner: 'sygtch',
         admin: "sygtch",
-        id: '2019-01-26T00-00-00',
+        id: '2020-01-03T00-00-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -673,30 +711,30 @@ firewall<span class="token operator">-</span>cmd <span class="token operator">--
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/12/20/%E7%88%B6%E5%AD%90%E7%B1%BB%EF%BC%9A%E8%BF%94%E5%9B%9E%E5%80%BC%E3%80%81%E4%BC%A0%E5%8F%82%E3%80%81%E8%BD%AC%E5%9E%8B%E9%97%AE%E9%A2%98/">
+                <a href="/2020/01/09/Docker%E4%B8%8A%E6%90%AD%E5%BB%BAGogs/">
                     <div class="card-image">
                         
-                        <img src="https://p1.ssl.cdn.btime.com/t01042d3a468e5f24a2.jpg" class="responsive-img" alt="父子类：返回值、传参、转型问题">
+                        <img src="https://upload-images.jianshu.io/upload_images/3203841-f5abe9d79c39734d.png?imageMogr2/auto-orient/strip|imageView2/2/format/webp" class="responsive-img" alt="Docker上搭建自己的Git管理平台">
                         
-                        <span class="card-title">父子类：返回值、传参、转型问题</span>
+                        <span class="card-title">Docker上搭建自己的Git管理平台</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            每次闲得无聊就会想想父子转型...还是记下来吧
+                            买了服务器，就要优雅的管理代码了！
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-09
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                            <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-category">
+                                    服务器
                                 </a>
                             
                             
@@ -706,12 +744,16 @@ firewall<span class="token operator">-</span>cmd <span class="token operator">--
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">基础</span>
+                    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                        <span class="chip bg-color">服务器</span>
                     </a>
                     
-                    <a href="/tags/%E5%90%8E%E7%AB%AF/">
-                        <span class="chip bg-color">后端</span>
+                    <a href="/tags/docker/">
+                        <span class="chip bg-color">docker</span>
+                    </a>
+                    
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>
@@ -725,30 +767,30 @@ firewall<span class="token operator">-</span>cmd <span class="token operator">--
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/01/25/Elasticsearch%E5%85%A5%E9%97%A8/">
+                <a href="/2019/12/27/Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3/">
                     <div class="card-image">
                         
-                        <img src="http://jbcdn2.b0.upaiyun.com/2017/10/c6cf4b2000277c64f55e00cf6d2f294f.png" class="responsive-img" alt="Elasticsearch入门">
+                        <img src="https://upload-images.jianshu.io/upload_images/19860184-4b7d19e0dc40db0a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="Vue基础（四）路由相关">
                         
-                        <span class="card-title">Elasticsearch入门</span>
+                        <span class="card-title">Vue基础（四）路由相关</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            给自己弄个好点的搜索器...否则我还沉浸在sql拼装[允悲]
+                            作为一个后端，我感觉学到组件，应该行了...行了吧
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-01-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BB%84%E4%BB%B6/" class="post-category">
-                                    组件
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -758,12 +800,16 @@ firewall<span class="token operator">-</span>cmd <span class="token operator">--
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%90%9C%E7%B4%A2/">
-                        <span class="chip bg-color">搜索</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
-                    <a href="/tags/ElasticSearch/">
-                        <span class="chip bg-color">ElasticSearch</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">基础</span>
                     </a>
                     
                 </div>

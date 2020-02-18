@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Docker上搭建自己的Git管理平台, n阶行列式">
-    <meta name="description" content="买了服务器，就要优雅的管理代码了！">
+    <meta name="keywords" content="建虚拟机后的常规配置, n阶行列式">
+    <meta name="description" content="为了建FastDFS，先在虚拟机上试试">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
 	<!--简书图床-->
 	<meta name="referrer" content="no-referrer"/>
 	
-    <title>Docker上搭建自己的Git管理平台 | n阶行列式</title>
+    <title>建虚拟机后的常规配置 | n阶行列式</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -284,12 +284,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://upload-images.jianshu.io/upload_images/3203841-f5abe9d79c39734d.png?imageMogr2/auto-orient/strip|imageView2/2/format/webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://www.fmi.com.cn/uploadfile/2018/1025/20181025091513467.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Docker上搭建自己的Git管理平台</h1>
+                    <h1 class="description center-align post-title">建虚拟机后的常规配置</h1>
                 </div>
             </div>
         </div>
@@ -299,105 +299,10 @@
 
 
 
-<main class="post-container content">
+<main class="container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
-<style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
-
-    #articleContent :focus {
-        outline: none;
-    }
-
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
-
-    .toc-widget {
-        width: 345px;
-        padding-left: 20px;
-    }
-
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
-
-    #toc-content {
-        height: calc(100vh - 250px);
-        overflow: auto;
-    }
-
-    #toc-content ol {
-        padding-left: 10px;
-    }
-
-    #toc-content ol li {
-        padding-left: 10px;
-    }
-
-    #toc-content .toc-link:hover {
-        color: #42b983;
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
-
-    #toc-content .is-active-link {
-        color: #42b983;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #42b983;
-    }
-
-    #floating-toc-btn {
-        position: fixed;
-        right: 15px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
-
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
-
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+    <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -410,12 +315,12 @@
                                 <span class="chip bg-color">服务器</span>
                             </a>
                         
-                            <a href="/tags/docker/">
-                                <span class="chip bg-color">docker</span>
+                            <a href="/tags/%E5%AE%89%E8%A3%85/">
+                                <span class="chip bg-color">安装</span>
                             </a>
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                                <span class="chip bg-color">虚拟机</span>
                             </a>
                         
                     </div>
@@ -439,7 +344,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-01-09
+                    2020-01-26
                 </div>
                 
 
@@ -453,14 +358,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    818
+                    151
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 				
@@ -476,99 +381,30 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Docker上搭建自己的Git管理平台"><a href="#Docker上搭建自己的Git管理平台" class="headerlink" title="Docker上搭建自己的Git管理平台"></a>Docker上搭建自己的Git管理平台</h1><h2 id="初识docker"><a href="#初识docker" class="headerlink" title="初识docker"></a>初识docker</h2><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><pre class=" language-java"><code class="language-java"># 查找centos镜像
-docker search centos
-# 下载centos镜像
-sudo docker pull docker<span class="token punctuation">.</span>io<span class="token operator">/</span>centos<span class="token operator">:</span>latest
-
-# 查看镜像
-sudo docker image ls
-# 删除镜像
-sudo docker image rm <span class="token number">123456789</span>
-# 若有容器<span class="token punctuation">(</span>container<span class="token punctuation">)</span>在引用此镜像会造成删除失败，则先删除容器
-# 先查看正在运行的container，再根据container的id删除
-docker ps <span class="token operator">-</span>a
-docker rm <span class="token function">123456</span><span class="token punctuation">(</span>containerId<span class="token punctuation">)</span>
-docker image rm <span class="token function">123456789</span><span class="token punctuation">(</span>imageId<span class="token punctuation">)</span>
-
-# 创建容器并进入其中，参数说明<span class="token operator">:</span> <span class="token operator">-</span>t分配一个伪终端并绑定到容器的标准输入，<span class="token operator">-</span>i 让容器的标准输入保持打开
-sudo docker run <span class="token operator">-</span>t <span class="token operator">-</span>i <span class="token operator">--</span>name guo<span class="token operator">-</span>centos docker<span class="token punctuation">.</span>io<span class="token operator">/</span>centos<span class="token operator">:</span>latest <span class="token operator">/</span>bin<span class="token operator">/</span>bash
-#  退出容器
-exit
-# 删除容器
-sudo docker rm guo<span class="token operator">-</span>centos
-
-# 查看所有容器
-sudo docker ps <span class="token operator">-</span>a
-# 查看当前运行的容器
-sudo docker ps
-
-# 启动容器
-sudo docker start guo<span class="token operator">-</span>centos
-# 停止容器
-sudo docker stop guo<span class="token operator">-</span>centos
-# 进入容器环境
-sudo docker attach guo<span class="token operator">-</span>centos
-
-#容器内部发送指令
-sudo docker exec guo<span class="token operator">-</span>centos touch xyz<span class="token punctuation">.</span>txt
-</code></pre>
-<h2 id="高级命令"><a href="#高级命令" class="headerlink" title="高级命令"></a>高级命令</h2><pre class=" language-java"><code class="language-java"># 将guo<span class="token operator">-</span>centos容器内的xyz<span class="token punctuation">.</span>txt文件拷贝到根目录下
-sudo docker cp guo<span class="token operator">-</span>centos<span class="token operator">:</span>xyz<span class="token punctuation">.</span>txt <span class="token punctuation">.</span>/
-
-# 将自定义容器发布为镜像，参数说明：<span class="token operator">-</span>a为作者，<span class="token operator">-</span>m为提交信息
-sudo docker commit <span class="token operator">-</span>a <span class="token string">"GTC"</span> <span class="token operator">-</span>m <span class="token string">"add txt"</span> guo<span class="token operator">-</span>centos guo<span class="token operator">-</span>centos<span class="token operator">:</span><span class="token number">0.1</span>
-
-# 基于新建的镜像创建容器，生成的新容器，包含镜像内曾经有的xyz<span class="token punctuation">.</span>txt
-sudo docker run <span class="token operator">-</span>t <span class="token operator">-</span>i <span class="token operator">--</span>name another<span class="token operator">-</span>centos guo<span class="token operator">-</span>centos<span class="token operator">:</span><span class="token number">0.1</span> <span class="token operator">/</span>bin<span class="token operator">/</span>bash
-
-# 查看镜像信息
-sudo docker history guo<span class="token operator">-</span>centos<span class="token operator">:</span><span class="token number">0.1</span>
-# 查看容器内变动日志
-sudo docker diff guo<span class="token operator">-</span>centos  
-# 查看镜像的详细信息
-sudo docker inspect zhaoolee<span class="token operator">-</span>centos<span class="token operator">:</span><span class="token number">0.1</span> 
-# 查看容器的详细信息
-sudo docker inspect zhaoolee<span class="token operator">-</span>centos</code></pre>
-<h2 id="私有库的创建"><a href="#私有库的创建" class="headerlink" title="私有库的创建"></a>私有库的创建</h2><pre class=" language-java"><code class="language-java"># <span class="token number">1</span><span class="token punctuation">.</span>下载私有仓库注册服务器的镜像
-sudo docker pull registry<span class="token operator">:</span>latest
-
-# <span class="token number">2</span><span class="token punctuation">.</span>创建一个注册服务器容器<span class="token punctuation">,</span>参数说明 <span class="token operator">-</span>d容器在后端运行<span class="token punctuation">,</span> <span class="token operator">-</span>p <span class="token number">5000</span><span class="token operator">:</span><span class="token number">5000</span>在容器的<span class="token number">5000</span>端口运行并映射到外部系统的<span class="token number">5000</span>端口<span class="token punctuation">,</span> <span class="token operator">--</span>name server<span class="token operator">-</span>registry容器命名为guo<span class="token operator">-</span>server<span class="token operator">-</span>registry<span class="token punctuation">,</span> <span class="token operator">-</span>v <span class="token operator">/</span>tmp<span class="token operator">/</span>registry <span class="token operator">/</span>tmp<span class="token operator">/</span>registry把宿主机的目录<span class="token operator">/</span>tmp<span class="token operator">/</span>registry挂载到容器目录<span class="token operator">/</span>tmp<span class="token operator">/</span>registry
-sudo docker run <span class="token operator">-</span>d <span class="token operator">-</span>p <span class="token number">5000</span><span class="token operator">:</span><span class="token number">5000</span> <span class="token operator">--</span>name guo<span class="token operator">-</span>server<span class="token operator">-</span>registry <span class="token operator">-</span>v <span class="token operator">/</span>tmp<span class="token operator">/</span>registry<span class="token operator">:</span><span class="token operator">/</span>tmp<span class="token operator">/</span>registry docker<span class="token punctuation">.</span>io<span class="token operator">/</span>registry<span class="token operator">:</span>latest
-
-# <span class="token number">3</span><span class="token punctuation">.</span>为本地镜像添加标签，并将其归入本地仓库
-sudo docker tag guo<span class="token operator">-</span>centos<span class="token operator">:</span><span class="token number">0.1</span> localhost<span class="token operator">:</span><span class="token number">5000</span><span class="token operator">/</span>guo<span class="token operator">-</span>centos<span class="token operator">:</span><span class="token number">0.1</span>
-# 将被标记的本地镜像推到库中
-sudo docker push localhost<span class="token operator">:</span><span class="token number">5000</span><span class="token operator">/</span>guo<span class="token operator">-</span>centos<span class="token operator">:</span><span class="token number">0.1</span>
-
-# <span class="token number">4</span><span class="token punctuation">.</span>使用
-sudo docker pull <span class="token number">143</span><span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token punctuation">.</span>xxx<span class="token operator">:</span><span class="token number">5000</span><span class="token operator">/</span>guo<span class="token operator">-</span>centos<span class="token operator">:</span><span class="token number">0.1</span></code></pre>
-<h2 id="卸载docker"><a href="#卸载docker" class="headerlink" title="卸载docker"></a>卸载docker</h2><p>如果已有老版本docker，先查看已安装的docker：</p>
-<pre class=" language-java"><code class="language-java">yum list installed <span class="token operator">|</span> grep docker</code></pre>
-<p>可以看见已经安装的：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/19860184-2c9c02c911a4cdf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>将其卸载，以防冲突：</p>
-<pre class=" language-java"><code class="language-java">yum <span class="token operator">-</span>y remove  containerd<span class="token punctuation">.</span>io<span class="token punctuation">.</span>x86_64  docker<span class="token operator">-</span>ce<span class="token punctuation">.</span>x86_64  docker<span class="token operator">-</span>ce<span class="token operator">-</span>cli<span class="token punctuation">.</span>x86_64</code></pre>
-<h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><pre class=" language-java"><code class="language-java"># 通过yum源安装docker
-yum <span class="token operator">-</span>y install docker
-# 启动docker
-systemctl start docker
-# 开机自启
-sudo systemctl enable docker</code></pre>
-<p>也可以通过“宝塔”进行快速安装设置。</p>
-<h2 id="下载gogs的镜像"><a href="#下载gogs的镜像" class="headerlink" title="下载gogs的镜像"></a>下载gogs的镜像</h2><pre class=" language-java"><code class="language-java">docker pull gogs<span class="token operator">/</span>gogs</code></pre>
-<p><img src="https://upload-images.jianshu.io/upload_images/19860184-2fa1c8d2d6f20b73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h2 id="创建gogs的储存文件夹"><a href="#创建gogs的储存文件夹" class="headerlink" title="创建gogs的储存文件夹"></a>创建gogs的储存文件夹</h2><pre class=" language-java"><code class="language-java">mkdir <span class="token operator">-</span>p <span class="token operator">/</span>var<span class="token operator">/</span>gogs</code></pre>
-<p><img src="https://upload-images.jianshu.io/upload_images/19860184-f27f7c6125595a8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h2 id="运行镜像，产生容器，映射端口"><a href="#运行镜像，产生容器，映射端口" class="headerlink" title="运行镜像，产生容器，映射端口"></a>运行镜像，产生容器，映射端口</h2><pre class=" language-java"><code class="language-java">docker run <span class="token operator">--</span>name<span class="token operator">=</span>gogs <span class="token operator">-</span>p <span class="token number">10022</span><span class="token operator">:</span><span class="token number">22</span> <span class="token operator">-</span>p <span class="token number">10080</span><span class="token operator">:</span><span class="token number">3000</span> <span class="token operator">-</span>v <span class="token operator">/</span>var<span class="token operator">/</span>gogs<span class="token operator">:</span><span class="token operator">/</span>data gogs<span class="token operator">/</span>gogs</code></pre>
-<p><img src="https://upload-images.jianshu.io/upload_images/19860184-c526d3613651048a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h2 id="对数据库、端口、账户进行最后的配置"><a href="#对数据库、端口、账户进行最后的配置" class="headerlink" title="对数据库、端口、账户进行最后的配置"></a>对数据库、端口、账户进行最后的配置</h2><p>以下的配置我忘记截图了，本章两张图片来源简书@zhaoolee</p>
-<p>数据库的简单配置：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/19860184-5637b909c88235d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="gogs数据库.png"></p>
-<p>仓库的端口、账户配置：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/19860184-55a640eab8ed9627.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="gogs配置.png"></p>
-<p>至此，已经完成了自己的git管理库！</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/19860184-e942cb08d0d1a308.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="git-gogs成果图.png"></p>
+                <h1 id="建虚拟机后的常规配置"><a href="#建虚拟机后的常规配置" class="headerlink" title="建虚拟机后的常规配置"></a>建虚拟机后的常规配置</h1><ol>
+<li><p>网络配置：</p>
+<pre class=" language-java"><code class="language-java">vi <span class="token operator">/</span>etc<span class="token operator">/</span>sysconfig<span class="token operator">/</span>network<span class="token operator">-</span>scripts<span class="token operator">/</span>ifcfg<span class="token operator">-</span>ens33</code></pre>
+<p>修改最后的onboot属性为yes（按 i 修改，按 Esc 退出编辑，按 :wq 保存并退出）。</p>
+<pre class=" language-java"><code class="language-java"># 若想让ip固定不变，则继续修改ifcfg<span class="token operator">-</span>ens33
+# 将BOOTPROTO改为<span class="token keyword">static</span>，加一项IPADDR<span class="token operator">=</span><span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">31.132</span>
+# 重启网络服务
+service network restart
+#查看inet即可知道本机ip
+ip addr</code></pre>
+</li>
+</ol>
+<ol start="2">
+<li><p>赋予操作权限：</p>
+<pre class=" language-java"><code class="language-java">chmod <span class="token number">777</span> <span class="token operator">/</span>etc<span class="token operator">/</span>guotianchi</code></pre>
+</li>
+</ol>
+<ol start="3">
+<li><p>关闭防火墙</p>
+<pre class=" language-java"><code class="language-java">systemctl stop firewalld<span class="token punctuation">.</span>service #停止firewall
+systemctl disable firewalld<span class="token punctuation">.</span>service #禁止firewall开机启动
+firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>state #查看默认防火墙状态（关闭后显示notrunning，开启后显示running）</code></pre>
+</li>
+</ol>
 
             </div>
             <hr/>
@@ -594,7 +430,7 @@ sudo systemctl enable docker</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://live4bug.com/2019/01/09/%E5%88%9D%E8%AF%86Docker/">http://live4bug.com/2019/01/09/%E5%88%9D%E8%AF%86Docker/</a>
+                    <a href="http://live4bug.com/2020/01/26/%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%90%8E%E7%9A%84%E5%B8%B8%E8%A7%84%E9%85%8D%E7%BD%AE/">http://live4bug.com/2020/01/26/%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%90%8E%E7%9A%84%E5%B8%B8%E8%A7%84%E9%85%8D%E7%BD%AE/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -636,12 +472,12 @@ sudo systemctl enable docker</code></pre>
                                     <span class="chip bg-color">服务器</span>
                                 </a>
                             
-                                <a href="/tags/docker/">
-                                    <span class="chip bg-color">docker</span>
+                                <a href="/tags/%E5%AE%89%E8%A3%85/">
+                                    <span class="chip bg-color">安装</span>
                                 </a>
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                                    <span class="chip bg-color">虚拟机</span>
                                 </a>
                             
                         </div>
@@ -812,7 +648,7 @@ sudo systemctl enable docker</code></pre>
         repo: 'sygtch.github.io',
         owner: 'sygtch',
         admin: "sygtch",
-        id: '2019-01-09T00-00-00',
+        id: '2020-01-26T00-00-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -833,28 +669,86 @@ sudo systemctl enable docker</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/01/20/FastDFS%E6%90%AD%E5%BB%BA/">
+                <a href="/2020/01/26/%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%90%8E%E7%9A%84%E5%B8%B8%E8%A7%84%E9%85%8D%E7%BD%AE/">
                     <div class="card-image">
                         
-                        <img src="https://images.cnitblog.com/blog/338008/201503/181404265791405.png" class="responsive-img" alt="FastDFS搭建">
+                        <img src="https://www.fmi.com.cn/uploadfile/2018/1025/20181025091513467.jpg" class="responsive-img" alt="建虚拟机后的常规配置">
                         
-                        <span class="card-title">FastDFS搭建</span>
+                        <span class="card-title">建虚拟机后的常规配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            听朋友说他们的文件、图片存储用的是FastDFS，我也要！
+                            为了建FastDFS，先在虚拟机上试试
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-01-20
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-category">
+                                    服务器
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                        <span class="chip bg-color">服务器</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AE%89%E8%A3%85/">
+                        <span class="chip bg-color">安装</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                        <span class="chip bg-color">虚拟机</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/01/25/Elasticsearch%E5%85%A5%E9%97%A8/">
+                    <div class="card-image">
+                        
+                        <img src="https://upload-images.jianshu.io/upload_images/19860184-d23d691b88dc5694.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="Elasticsearch入门">
+                        
+                        <span class="card-title">Elasticsearch入门</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            给自己弄个好点的搜索器...否则我还沉浸在sql拼装[允悲]
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -870,72 +764,12 @@ sudo systemctl enable docker</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AE%89%E8%A3%85/">
-                        <span class="chip bg-color">安装</span>
+                    <a href="/tags/%E6%90%9C%E7%B4%A2/">
+                        <span class="chip bg-color">搜索</span>
                     </a>
                     
-                    <a href="/tags/FastDFS/">
-                        <span class="chip bg-color">FastDFS</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%96%87%E4%BB%B6/">
-                        <span class="chip bg-color">文件</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/01/03/freemarker%E5%9F%BA%E7%A1%80/">
-                    <div class="card-image">
-                        
-                        <img src="https://upload-images.jianshu.io/upload_images/19860184-558011011dfe8eb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="freemarker基础">
-                        
-                        <span class="card-title">freemarker基础</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            哈哈学了好多前端的知识，听说freemarker还是很主流的
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-01-03
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">基础</span>
-                    </a>
-                    
-                    <a href="/tags/freemarker/">
-                        <span class="chip bg-color">freemarker</span>
+                    <a href="/tags/ElasticSearch/">
+                        <span class="chip bg-color">ElasticSearch</span>
                     </a>
                     
                 </div>
@@ -971,100 +805,6 @@ sudo systemctl enable docker</code></pre>
 <style type="text/css">
 code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
 </style>
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
-
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).show();
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
 
     
 

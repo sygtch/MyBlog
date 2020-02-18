@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="freemarker基础, n阶行列式">
-    <meta name="description" content="哈哈学了好多前端的知识，听说freemarker还是很主流的">
+    <meta name="keywords" content="Elasticsearch入门, n阶行列式">
+    <meta name="description" content="给自己弄个好点的搜索器...否则我还沉浸在sql拼装[允悲]">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
 	<!--简书图床-->
 	<meta name="referrer" content="no-referrer"/>
 	
-    <title>freemarker基础 | n阶行列式</title>
+    <title>Elasticsearch入门 | n阶行列式</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -284,12 +284,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://upload-images.jianshu.io/upload_images/19860184-558011011dfe8eb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://upload-images.jianshu.io/upload_images/19860184-d23d691b88dc5694.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">freemarker基础</h1>
+                    <h1 class="description center-align post-title">Elasticsearch入门</h1>
                 </div>
             </div>
         </div>
@@ -311,16 +311,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                <span class="chip bg-color">前端</span>
+                            <a href="/tags/%E6%90%9C%E7%B4%A2/">
+                                <span class="chip bg-color">搜索</span>
                             </a>
                         
-                            <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">基础</span>
-                            </a>
-                        
-                            <a href="/tags/freemarker/">
-                                <span class="chip bg-color">freemarker</span>
+                            <a href="/tags/ElasticSearch/">
+                                <span class="chip bg-color">ElasticSearch</span>
                             </a>
                         
                     </div>
@@ -331,8 +327,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                前端
+                            <a href="/categories/%E7%BB%84%E4%BB%B6/" class="post-category">
+                                组件
                             </a>
                         
                     </div>
@@ -344,7 +340,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-01-03
+                    2020-01-25
                 </div>
                 
 
@@ -358,14 +354,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    241
+                    534
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 				
@@ -381,68 +377,88 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="freemarker基础"><a href="#freemarker基础" class="headerlink" title="freemarker基础"></a>freemarker基础</h1><ol>
-<li><p>注释,&lt;#–    –&gt;</p>
-</li>
-<li><p>插值，${name}</p>
-</li>
-<li><p>FTL指令：</p>
-<pre class=" language-html"><code class="language-html">遍历list:
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#list</span> <span class="token attr-name">students</span> <span class="token attr-name">as</span> <span class="token attr-name">stu</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>${stu_index}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>${stu.name}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#list</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
-    集合students的大小：${students?size}
-
-map:
-    方法1：直接取对象
-        姓名：${stuMap['stu1'].name}
-    方法2：直接取key（把对象当作key）
-        姓名：${stuMap.stu1.name}
-    方法3：取出所有key，用list遍历
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#list</span> <span class="token attr-name">stuMap?key</span> <span class="token attr-name">as</span> <span class="token attr-name">k</span><span class="token punctuation">></span></span>
-            姓名：${stuMap[k].name}  此处不能用方法2的“.”
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#list</span><span class="token punctuation">></span></span>
-</code></pre>
-</li>
-</ol>
-<ol start="4">
-<li><p>if</p>
-<pre class=" language-html"><code class="language-html">&lt;td &lt;#if stu.name == '小明'>style="background:red;"<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#if</span><span class="token punctuation">></span></span>>ahha<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
-注：大于比较用 gt
-
-空值处理,方法1：
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#if</span> <span class="token attr-name">stus??</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#list</span> <span class="token attr-name">stus</span> <span class="token attr-name">as</span> <span class="token attr-name">s</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#list</span><span class="token punctuation">></span></span>   
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>#if</span><span class="token punctuation">></span></span>
-    方法2：缺省值，如果stuhuofirst或name为空，则显示‘’
-        ${(stu.first.name)!''}</code></pre>
-</li>
-</ol>
-<ol start="5">
-<li><p>日期格式化</p>
-<pre class=" language-html"><code class="language-html">年月日：${today?date}
-时分秒：${today?time}
-日期和时间：${today?datetime}
-自定义格式化：${today?string("yyyy年MM月dd日")}</code></pre>
-</li>
-</ol>
-<ol start="6">
-<li><p>数字转字符串</p>
-<pre class=" language-html"><code class="language-html">${point?c}</code></pre>
-</li>
-</ol>
-<ol start="7">
-<li><p>json转对象</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#assign</span> <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{<span class="token punctuation">'</span>bank:<span class="token punctuation">'</span>银行<span class="token punctuation">'</span>,<span class="token punctuation">'</span>account<span class="token punctuation">'</span>:<span class="token punctuation">'</span>123456<span class="token punctuation">'</span>}<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#assign</span> <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation">=</span>text?eval</span> <span class="token punctuation">/></span></span>
-开户行：${data.bank}</code></pre>
-</li>
-</ol>
+                <h1 id="Elasticsearch入门"><a href="#Elasticsearch入门" class="headerlink" title="Elasticsearch入门"></a>Elasticsearch入门</h1><h2 id="1-安装ElasticSearch及插件"><a href="#1-安装ElasticSearch及插件" class="headerlink" title="1 安装ElasticSearch及插件"></a>1 安装ElasticSearch及插件</h2><h3 id="1-1-安装ElasticSearch"><a href="#1-1-安装ElasticSearch" class="headerlink" title="1.1 安装ElasticSearch"></a>1.1 安装ElasticSearch</h3><h3 id="1-2-安装head插件"><a href="#1-2-安装head插件" class="headerlink" title="1.2 安装head插件"></a>1.2 安装head插件</h3><p>启动head命令，在当前文件夹内，cmd。然后输入npm start run ，即可在localhost:9100访问</p>
+<h2 id="2-快速入门"><a href="#2-快速入门" class="headerlink" title="2 快速入门"></a>2 快速入门</h2><h3 id="2-1-建立索引库，加索引，加文档，完成简单搜索"><a href="#2-1-建立索引库，加索引，加文档，完成简单搜索" class="headerlink" title="2.1 建立索引库，加索引，加文档，完成简单搜索"></a>2.1 建立索引库，加索引，加文档，完成简单搜索</h3><p>利用postman建立索引库，通过 <a href="http://localhost:9200/xc_course" target="_blank" rel="noopener">http://localhost:9200/xc_course</a> 接口的PUT请求，发送json</p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"settings"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token property">"index"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+            <span class="token property">"number_of_shards"</span><span class="token operator">:</span><span class="token string">"1"</span><span class="token punctuation">,</span>    //分片数
+            <span class="token property">"number_of_replicas"</span><span class="token operator">:</span><span class="token number">0</span>    //副本数
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>然后，建立映射，通过 <a href="http://localhost:9200/xc_course/doc/_mapping" target="_blank" rel="noopener">http://localhost:9200/xc_course/doc/_mapping</a> 接口的PUT请求，发送json</p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"properties"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token property">"description"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+            <span class="token property">"type"</span><span class="token operator">:</span><span class="token string">"text"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">"name"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+            <span class="token property">"type"</span><span class="token operator">:</span><span class="token string">"text"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">"studymodel"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+            <span class="token property">"type"</span><span class="token operator">:</span><span class="token string">"keyword"</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>创建文档，通过 <a href="http://localhost:9200/xc_course/doc/12345678" target="_blank" rel="noopener">http://localhost:9200/xc_course/doc/12345678</a>  接口的 PUT/POST 请求，发送json</p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"name"</span><span class="token operator">:</span><span class="token string">"BootStrap"</span><span class="token punctuation">,</span>
+    <span class="token property">"description"</span><span class="token operator">:</span><span class="token string">"我一会要看电影放松一下心情，偷懒3小时"</span><span class="token punctuation">,</span>
+    <span class="token property">"studymodel"</span><span class="token operator">:</span><span class="token string">"201001"</span>
+<span class="token punctuation">}</span></code></pre>
+<p>简单搜索： <a href="http://localhost:9200/xc_course/doc/12345678" target="_blank" rel="noopener">http://localhost:9200/xc_course/doc/12345678</a> 接口的 GET 方法；</p>
+<p>​                    <a href="http://localhost:9200/xc_course/doc/_search" target="_blank" rel="noopener">http://localhost:9200/xc_course/doc/_search</a> 接口的 GET 方法；</p>
+<p>​                    <a href="http://localhost:9200/xc_course/doc/_search?q=name:购物车" target="_blank" rel="noopener">http://localhost:9200/xc_course/doc/_search?q=name:购物车</a> 接口的 GET 方法；</p>
+<h2 id="3-IK分词器"><a href="#3-IK分词器" class="headerlink" title="3 IK分词器"></a>3 IK分词器</h2><p>安装ik分词器，利用 <a href="http://localhost:9200/_analyze" target="_blank" rel="noopener">http://localhost:9200/_analyze</a> 接口进行分词测试：</p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"text"</span><span class="token operator">:</span><span class="token string">"我一会要看电影放松一下心情，偷懒3小时"</span><span class="token punctuation">,</span>
+    <span class="token property">"analyzer"</span><span class="token operator">:</span><span class="token string">"ik_smart"</span>   //如果不加analyzer，则使用es自带分词器。此处还有ik_max_word 细粒度比 ik_smart 高
+<span class="token punctuation">}</span></code></pre>
+<p>自定义分词器。<strong>在ElasticSearch文件夹的plungs目录下的ik改配置！！！</strong></p>
+<p>设置分词器时，索引用 ik_max_word 细颗粒度（分的越细，越容易将文章暴露出去，方便自己被搜索），搜索用 ik_smart 粗颗粒度（分的越粗，匹配的会更少，更精确）。</p>
+<p><strong>字段类型</strong>：</p>
+<p><strong>text</strong> 是文本字段，可以被全文检索,可以分词。</p>
+<pre class=" language-json"><code class="language-json"><span class="token property">"name"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token property">"type"</span> <span class="token operator">:</span> <span class="token string">"text"</span><span class="token punctuation">,</span>
+    <span class="token property">"analyzer"</span> <span class="token operator">:</span> <span class="token string">"ik_max_word"</span><span class="token punctuation">,</span>
+    <span class="token property">"search_analyzer"</span> <span class="token operator">:</span> <span class="token string">"ik_smart"</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong>keyword是精确匹配，不被分词！</strong> </p>
+<p><strong>data</strong> 是日期类型，通过format设置日期格式。</p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"properties"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">"timestamp"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"date"</span><span class="token punctuation">,</span>
+                <span class="token property">"format"</span><span class="token operator">:</span> "yyyy‐MM‐dd HH<span class="token operator">:</span>mm<span class="token operator">:</span>ss||yyyy‐MM‐dd"
+               <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>以后再建立映射时：</p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>   
+    <span class="token property">"properties"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"text"</span><span class="token punctuation">,</span>
+                        <span class="token property">"analyzer"</span><span class="token operator">:</span><span class="token string">"ik_max_word"</span><span class="token punctuation">,</span>                                                           <span class="token property">"search_analyzer"</span><span class="token operator">:</span><span class="token string">"ik_smart"</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"text"</span><span class="token punctuation">,</span>
+                        <span class="token property">"analyzer"</span><span class="token operator">:</span><span class="token string">"ik_max_word"</span><span class="token punctuation">,</span>                                                           <span class="token property">"search_analyzer"</span><span class="token operator">:</span><span class="token string">"ik_smart"</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token property">"pic"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+                        <span class="token property">"type"</span><span class="token operator">:</span><span class="token string">"text"</span><span class="token punctuation">,</span>
+                        <span class="token property">"index"</span><span class="token operator">:</span><span class="token boolean">false</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token property">"studymodel"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+                        <span class="token property">"type"</span><span class="token operator">:</span><span class="token string">"text"</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>数值类型：尽量选择范围小的类型，提高搜索效率。对于浮点数尽量用比例因子，比如价格单位是“元”，我们将比例因子设为100，这就会按照“分”来存储。</p>
+<pre class=" language-json"><code class="language-json"><span class="token property">"price"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"scaled_float"</span><span class="token punctuation">,</span>
+    <span class="token property">"scaling_factor"</span><span class="token operator">:</span> <span class="token number">100</span>
+<span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr/>
@@ -468,7 +484,7 @@ map:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://live4bug.com/2019/01/03/freemarker%E5%9F%BA%E7%A1%80/">http://live4bug.com/2019/01/03/freemarker%E5%9F%BA%E7%A1%80/</a>
+                    <a href="http://live4bug.com/2020/01/25/Elasticsearch%E5%85%A5%E9%97%A8/">http://live4bug.com/2020/01/25/Elasticsearch%E5%85%A5%E9%97%A8/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -506,16 +522,12 @@ map:
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                    <span class="chip bg-color">前端</span>
+                                <a href="/tags/%E6%90%9C%E7%B4%A2/">
+                                    <span class="chip bg-color">搜索</span>
                                 </a>
                             
-                                <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">基础</span>
-                                </a>
-                            
-                                <a href="/tags/freemarker/">
-                                    <span class="chip bg-color">freemarker</span>
+                                <a href="/tags/ElasticSearch/">
+                                    <span class="chip bg-color">ElasticSearch</span>
                                 </a>
                             
                         </div>
@@ -686,7 +698,7 @@ map:
         repo: 'sygtch.github.io',
         owner: 'sygtch',
         admin: "sygtch",
-        id: '2019-01-03T00-00-00',
+        id: '2020-01-25T00-00-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -711,23 +723,23 @@ map:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/01/09/%E5%88%9D%E8%AF%86Docker/">
+                <a href="/2020/01/26/%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%90%8E%E7%9A%84%E5%B8%B8%E8%A7%84%E9%85%8D%E7%BD%AE/">
                     <div class="card-image">
                         
-                        <img src="https://upload-images.jianshu.io/upload_images/3203841-f5abe9d79c39734d.png?imageMogr2/auto-orient/strip|imageView2/2/format/webp" class="responsive-img" alt="Docker上搭建自己的Git管理平台">
+                        <img src="https://www.fmi.com.cn/uploadfile/2018/1025/20181025091513467.jpg" class="responsive-img" alt="建虚拟机后的常规配置">
                         
-                        <span class="card-title">Docker上搭建自己的Git管理平台</span>
+                        <span class="card-title">建虚拟机后的常规配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            买了服务器，就要优雅的管理代码了！
+                            为了建FastDFS，先在虚拟机上试试
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-01-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-26
                         </span>
                         <span class="publish-author">
                             
@@ -748,12 +760,12 @@ map:
                         <span class="chip bg-color">服务器</span>
                     </a>
                     
-                    <a href="/tags/docker/">
-                        <span class="chip bg-color">docker</span>
+                    <a href="/tags/%E5%AE%89%E8%A3%85/">
+                        <span class="chip bg-color">安装</span>
                     </a>
                     
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
+                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                        <span class="chip bg-color">虚拟机</span>
                     </a>
                     
                 </div>
@@ -764,53 +776,52 @@ map:
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/01/03/freemarker%E5%9F%BA%E7%A1%80/">
+                <a href="/2020/01/20/FastDFS%E6%90%AD%E5%BB%BA/">
                     <div class="card-image">
                         
-                        <img src="https://upload-images.jianshu.io/upload_images/19860184-558011011dfe8eb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="freemarker基础">
+                        <img src="https://images.cnitblog.com/blog/338008/201503/181404265791405.png" class="responsive-img" alt="FastDFS搭建">
                         
-                        <span class="card-title">freemarker基础</span>
+                        <span class="card-title">FastDFS搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            哈哈学了好多前端的知识，听说freemarker还是很主流的
+                            听朋友说他们的文件、图片存储用的是FastDFS，我也要！
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-01-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E7%BB%84%E4%BB%B6/" class="post-category">
+                                    组件
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/%E5%AE%89%E8%A3%85/">
+                        <span class="chip bg-color">安装</span>
                     </a>
                     
-                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">基础</span>
+                    <a href="/tags/FastDFS/">
+                        <span class="chip bg-color">FastDFS</span>
                     </a>
                     
-                    <a href="/tags/freemarker/">
-                        <span class="chip bg-color">freemarker</span>
+                    <a href="/tags/%E6%96%87%E4%BB%B6/">
+                        <span class="chip bg-color">文件</span>
                     </a>
                     
                 </div>
