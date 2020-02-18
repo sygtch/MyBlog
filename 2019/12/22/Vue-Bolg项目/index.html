@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Vue基础（四）路由相关, n阶行列式">
-    <meta name="description" content="作为一个后端，我感觉学到组件，应该行了...行了吧">
+    <meta name="keywords" content="Vue-Blog项目（杂要）, n阶行列式">
+    <meta name="description" content="本来是个正经的后端java，因为项目需要，参照着“菜鸟”简单的学习了一下vue。其功能还是很强大的，浅显的学学，入门挺简单...深了就入坑了。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
 	<!--简书图床-->
 	<meta name="referrer" content="no-referrer"/>
 	
-    <title>Vue基础（四）路由相关 | n阶行列式</title>
+    <title>Vue-Blog项目（杂要） | n阶行列式</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -284,12 +284,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://upload-images.jianshu.io/upload_images/19860184-4b7d19e0dc40db0a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://upload-images.jianshu.io/upload_images/19860184-dfca201f96ecb2a2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Vue基础（四）路由相关</h1>
+                    <h1 class="description center-align post-title">Vue-Blog项目（杂要）</h1>
                 </div>
             </div>
         </div>
@@ -344,7 +344,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-27
+                    2019-12-22
                 </div>
                 
 
@@ -358,7 +358,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    259
+                    59
                 </div>
                 
 
@@ -381,72 +381,14 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Vue基础（四）"><a href="#Vue基础（四）" class="headerlink" title="Vue基础（四）"></a>Vue基础（四）</h1><h1 id="5-路由"><a href="#5-路由" class="headerlink" title="5.路由"></a>5.路由</h1><ul>
-<li><p>若在建立项目初期，未选择路由配置，可在此处<strong>添加router</strong></p>
-<blockquote>
-<p>npm install vue-router –save-dev</p>
-</blockquote>
-<p>然后自己在 src - router新建index.js文件，配置路由相关。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> Vue from <span class="token string">'vue'</span>
-<span class="token keyword">import</span> Router from <span class="token string">'vue-router'</span>
-<span class="token keyword">import</span> HelloWorld from <span class="token string">'@/components/HelloWorld'</span>
-
-Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Router<span class="token punctuation">)</span>
-<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  routes<span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>
-      path<span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
-      name<span class="token operator">:</span> <span class="token string">'HelloWorld'</span><span class="token punctuation">,</span>
-      component<span class="token operator">:</span> HelloWorld
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token comment" spellcheck="true">//去掉地址中的#</span>
-    mode<span class="token operator">:</span><span class="token string">"history"</span>
-  <span class="token punctuation">]</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<p>并在main.js中注册</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> Vue from <span class="token string">'vue'</span>
-<span class="token keyword">import</span> App from <span class="token string">'./App'</span>
-<span class="token comment" spellcheck="true">//引用router</span>
-<span class="token keyword">import</span> router from <span class="token string">'./router'</span>
-
-Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span>
-
-<span class="token comment" spellcheck="true">/* eslint-disable no-new */</span>
-<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
-<span class="token comment" spellcheck="true">//注册router</span>
-  router<span class="token punctuation">,</span>
-  components<span class="token operator">:</span> <span class="token punctuation">{</span> App <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  template<span class="token operator">:</span> <span class="token string">'&lt;App/>'</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre>
-<p>最后在App.vue中添加要展现的内容</p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>template<span class="token operator">></span>
-  <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>router<span class="token operator">-</span>view<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>view<span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span></code></pre>
+                <h1 id="Vue-Blog项目（杂要）"><a href="#Vue-Blog项目（杂要）" class="headerlink" title="Vue-Blog项目（杂要）"></a>Vue-Blog项目（杂要）</h1><ul>
+<li><p>多选框：此处把多选框设为数组，即categories[]，多选后，数组内会自动保留所选的value值</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"checkbox"</span> value<span class="token operator">=</span><span class="token string">"Vue.js"</span> v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"blog.categories"</span><span class="token operator">/</span><span class="token operator">></span></code></pre>
 </li>
-<li><p><strong>路由的使用：</strong>超链接可以不用<a>标签，避免页面的自动刷新；写法如下：</p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>router<span class="token operator">-</span>link to<span class="token operator">=</span><span class="token string">"/hello"</span><span class="token operator">></span>HelloWorld<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span></code></pre>
-</li>
-<li><p><strong>vue自带http请求：vue-resource</strong></p>
-<blockquote>
-<p>npm install vue-resource –save-dev</p>
-</blockquote>
-<p>先在main.js中引入vue-resource</p>
-<pre class=" language-java"><code class="language-java"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token keyword">import</span> VueResource from <span class="token string">'vue-resource'</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token comment" spellcheck="true">//use之后，就可以在全局任何地方使用    </span>
-Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueResource<span class="token punctuation">)</span></code></pre>
-<p>然后，在组件中：</p>
-<pre class=" language-java"><code class="language-java"><span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>$http<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"http://xxxxx"</span><span class="token punctuation">)</span>
-        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>users <span class="token operator">=</span> data<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span></code></pre>
+</ul>
+<ul>
+<li><p>单选框：</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>select v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"blog.author"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span></code></pre>
 </li>
 </ul>
 
@@ -474,7 +416,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://live4bug.com/2019/12/27/Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3/">http://live4bug.com/2019/12/27/Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89%E8%B7%AF%E7%94%B1%E7%9B%B8%E5%85%B3/</a>
+                    <a href="http://live4bug.com/2019/12/22/Vue-Bolg%E9%A1%B9%E7%9B%AE/">http://live4bug.com/2019/12/22/Vue-Bolg%E9%A1%B9%E7%9B%AE/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -692,7 +634,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
         repo: 'sygtch.github.io',
         owner: 'sygtch',
         admin: "sygtch",
-        id: '2019-12-27T00-00-00',
+        id: '2019-12-22T00-00-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -717,23 +659,23 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/01/03/freemarker%E5%9F%BA%E7%A1%80/">
+                <a href="/2019/12/23/Vue%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
                     <div class="card-image">
                         
-                        <img src="https://upload-images.jianshu.io/upload_images/19860184-558011011dfe8eb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="freemarker基础">
+                        <img src="https://upload-images.jianshu.io/upload_images/19860184-0d62ac8ff7d69758.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="Vue基础（一）基本语法">
                         
-                        <span class="card-title">freemarker基础</span>
+                        <span class="card-title">Vue基础（一）基本语法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            哈哈学了好多前端的知识，听说freemarker还是很主流的
+                            本来是个正经的后端java，因为项目需要，就入坑了。参照“菜鸟教程”
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-03
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-23
                         </span>
                         <span class="publish-author">
                             
@@ -754,12 +696,12 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
                         <span class="chip bg-color">前端</span>
                     </a>
                     
-                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">基础</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
-                    <a href="/tags/freemarker/">
-                        <span class="chip bg-color">freemarker</span>
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">基础</span>
                     </a>
                     
                 </div>
@@ -773,30 +715,30 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/26/SpringBoot%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E7%82%B9%E8%B5%9E/">
+                <a href="/2019/12/22/%E5%BE%AE%E6%9C%8D%E5%8A%A1SpringCloud/">
                     <div class="card-image">
                         
-                        <img src="https://upload-images.jianshu.io/upload_images/19860184-e6fd7683e25c3215.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="SpringBoot实现文章点赞">
+                        <img src="https://img.wang1314.net/uploadfile/2019/2019-04-11/1554974614664u_577998_uw_920_wh_461_hl_158700_lm5_5651ed2ea735e9e7d99ddcd9e71ef0e5_m5.jpg" class="responsive-img" alt="微服务SpringCloud">
                         
-                        <span class="card-title">SpringBoot实现文章点赞</span>
+                        <span class="card-title">微服务SpringCloud</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一个博客的建立，怎么少的了“赞”！
+                            虽然平时用的都是SpringCloud，但是这种东西还是应该自己搭一遍才有底啊
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">
+                                    微服务
                                 </a>
                             
                             
@@ -806,20 +748,16 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%90%8E%E7%AB%AF/">
-                        <span class="chip bg-color">后端</span>
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">基础</span>
                     </a>
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/SpringCloud/">
+                        <span class="chip bg-color">SpringCloud</span>
                     </a>
                     
-                    <a href="/tags/redis%E7%BC%93%E5%AD%98/">
-                        <span class="chip bg-color">redis缓存</span>
-                    </a>
-                    
-                    <a href="/tags/quartz%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">
-                        <span class="chip bg-color">quartz定时任务</span>
+                    <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                        <span class="chip bg-color">微服务</span>
                     </a>
                     
                 </div>
