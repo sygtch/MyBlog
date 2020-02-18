@@ -13,8 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<!--简书图床-->
-	<meta name="referrer" content="no-referrer"/>
+
 	
     <title>建虚拟机后的常规配置 | n阶行列式</title>
     <link rel="icon" type="image/png" href="/favicon.png">
@@ -381,7 +380,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="建虚拟机后的常规配置"><a href="#建虚拟机后的常规配置" class="headerlink" title="建虚拟机后的常规配置"></a>建虚拟机后的常规配置</h1><ol>
+                <meta name="referrer" content="no-referrer"/>
+
+<h1 id="建虚拟机后的常规配置"><a href="#建虚拟机后的常规配置" class="headerlink" title="建虚拟机后的常规配置"></a>建虚拟机后的常规配置</h1><ol>
 <li><p>网络配置：</p>
 <pre class=" language-java"><code class="language-java">vi <span class="token operator">/</span>etc<span class="token operator">/</span>sysconfig<span class="token operator">/</span>network<span class="token operator">-</span>scripts<span class="token operator">/</span>ifcfg<span class="token operator">-</span>ens33</code></pre>
 <p>修改最后的onboot属性为yes（按 i 修改，按 Esc 退出编辑，按 :wq 保存并退出）。</p>
