@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="RabbitMQ的死信队列, n阶行列式">
-    <meta name="description" content="阴差阳错的学到了死信队列，在上一家公司就听大佬随口说过，终于用到了。">
+    <meta name="keywords" content="迭代实现部门表树形层级, n阶行列式">
+    <meta name="description" content="树形结构的数据其实算比较常见的，网上的方法真是五花八门，有的还太繁琐。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +15,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 	
-    <title>RabbitMQ的死信队列 | n阶行列式</title>
+    <title>迭代实现部门表树形层级 | n阶行列式</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -283,12 +283,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://upload-images.jianshu.io/upload_images/19860184-f2d6213bc3c222ec.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://upload-images.jianshu.io/upload_images/19860184-92290aca0f2a6c4d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">RabbitMQ的死信队列</h1>
+                    <h1 class="description center-align post-title">迭代实现部门表树形层级</h1>
                 </div>
             </div>
         </div>
@@ -405,16 +405,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">
-                                <span class="chip bg-color">消息队列</span>
+                            <a href="/tags/%E5%90%8E%E7%AB%AF/">
+                                <span class="chip bg-color">后端</span>
                             </a>
                         
-                            <a href="/tags/%E6%AD%BB%E4%BF%A1%E9%98%9F%E5%88%97/">
-                                <span class="chip bg-color">死信队列</span>
+                            <a href="/tags/%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%A0%81/">
+                                <span class="chip bg-color">基础代码</span>
                             </a>
                         
-                            <a href="/tags/RabbitMQ/">
-                                <span class="chip bg-color">RabbitMQ</span>
+                            <a href="/tags/%E6%A0%91%E5%BD%A2%E5%B1%82%E7%BA%A7/">
+                                <span class="chip bg-color">树形层级</span>
                             </a>
                         
                     </div>
@@ -425,8 +425,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BB%84%E4%BB%B6/" class="post-category">
-                                组件
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                后端
                             </a>
                         
                     </div>
@@ -438,7 +438,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-02-07
+                    2020-02-13
                 </div>
                 
 
@@ -452,14 +452,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    524
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    2 分
                 </div>
                 
 				
@@ -476,88 +476,100 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <meta name="referrer" content="no-referrer"/>
+# 迭代实现部门表树形层级
 
-<h1 id="RabbitMQ的死信队列"><a href="#RabbitMQ的死信队列" class="headerlink" title="RabbitMQ的死信队列"></a>RabbitMQ的死信队列</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>思考：因为在开发项目时，RabbitMQ的消费端出现了异常（工具类操作文件时，未找到文件路径）。由于在此之前并未对该异常进行预判，导致异常出现后，消费端仍然对MQ的消息进行消费，但是出现异常后无法对MQ进行回复，所以造成后果<strong>消费端一直消费该条信息，进入死循环！</strong></p>
-<p>从而引发了自己的思考：1. 开发时难免会出现异常，这种异常如果事先未预判，那么在程序运行中，消费端该怎么避免以上出现的死循环；2. 如果事先预判到异常，对其进行了抛出或捕获，消费端又该如何表现？</p>
-<p>带着这些问题，我查阅了很多资料…然后就发现了RabbitMQ的“死信”方案。不过好像对我的问题没什么用。但是新知识还是要学，不然怎么知道有用没用呢。</p>
-<h2 id="死信队列的概念"><a href="#死信队列的概念" class="headerlink" title="死信队列的概念"></a>死信队列的概念</h2><ul>
-<li>死信队列：DLX，dead-letter-exchange</li>
-<li>场景：比如，当队列由于一些问题，导致队列中的某些消息过期、消息满载、消息被拒绝。也就是说，一些有问题的消息<strong>没有被正确“消费”</strong>时，可以借助死信队列，将这些<strong>“问题消息”传到死信交换机</strong>，再由死信交换机<strong>传到死信队列</strong>，最后由死信队列对应的消费者，消费这些“问题消息”。</li>
-<li>死信的产生：<ol>
-<li>消息被拒绝(basic.reject / basic.nack)，并且requeue = false</li>
-<li>消息TTL过期</li>
-<li>队列达到最大长度</li>
-</ol>
-</li>
-</ul>
-<h2 id="死信队列的配置"><a href="#死信队列的配置" class="headerlink" title="死信队列的配置"></a>死信队列的配置</h2><p>首先要明确，死信队列只是处理“特殊问题”的普通队列。也就是说，A交换机和a队列处理事务A，B交换机和b队列处理事务B…而死信队列的交换机和队列处理事务X，只不过这个X的任务就是去消费那些问题消息。</p>
-<p>说到这里，其实也就没白了。死信队列和死信交换机的配置和普通的配置没有区别！</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//声明死信交换机</span>
-<span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span><span class="token string">"dead_exchange"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> Exchange <span class="token function">dead_exchange</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> ExchangeBuilder<span class="token punctuation">.</span><span class="token function">topicExchange</span><span class="token punctuation">(</span>DEAD_EXCHANGE<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">durable</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h2 id="方案1：先在数据库查出一级部门，再遍历每个部门，用其id作为父id查下属部门"><a href="#方案1：先在数据库查出一级部门，再遍历每个部门，用其id作为父id查下属部门" class="headerlink" title="方案1：先在数据库查出一级部门，再遍历每个部门，用其id作为父id查下属部门"></a>方案1：先在数据库查出一级部门，再遍历每个部门，用其id作为父id查下属部门</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getDept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//取出所有部门,返回的即是树形结构</span>
+    List<span class="token operator">&lt;</span>Department<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getEvery</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
 <span class="token punctuation">}</span>
 
-<span class="token comment" spellcheck="true">//声明死信队列</span>
-<span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span><span class="token string">"dead_queue"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> Queue <span class="token function">dead_routing_key</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> QueueBuilder<span class="token punctuation">.</span><span class="token function">durable</span><span class="token punctuation">(</span><span class="token string">"dead_queue"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//传入参数时，默认这时是零级部门，委托该方法用自身id=0去查找子部门</span>
+<span class="token keyword">public</span> List<span class="token operator">&lt;</span>Department<span class="token operator">></span> <span class="token function">getEvery</span><span class="token punctuation">(</span><span class="token keyword">int</span> pid<span class="token punctuation">)</span><span class="token punctuation">{</span>
 
-<span class="token comment" spellcheck="true">//对上述进行绑定</span>
-<span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span><span class="token string">"dead_bind"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> Binding <span class="token function">dead_bind</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Qualifier</span><span class="token punctuation">(</span><span class="token string">"dead_queue"</span><span class="token punctuation">)</span>Queue queue<span class="token punctuation">,</span><span class="token annotation punctuation">@Qualifier</span><span class="token punctuation">(</span><span class="token string">"dead_exchange"</span><span class="token punctuation">)</span>Exchange exchange<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> BindingBuilder<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">to</span><span class="token punctuation">(</span>exchange<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">with</span><span class="token punctuation">(</span><span class="token string">"dev"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">noargs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//将入参作为父id，从数据库查询子部门。此时，next为一级部门</span>
+    List<span class="token operator">&lt;</span>Department<span class="token operator">></span> next <span class="token operator">=</span> deptRepository<span class="token punctuation">.</span><span class="token function">findByParentId</span><span class="token punctuation">(</span>pid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>next<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//如果当前所委托查找的pid，确实存在子部门</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Department od <span class="token operator">:</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//对子部门遍历，继续查找下属部门</span>
+            List<span class="token operator">&lt;</span>Department<span class="token operator">></span> sub <span class="token operator">=</span> <span class="token function">getEvery</span><span class="token punctuation">(</span>od<span class="token punctuation">.</span><span class="token function">getDept_id</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//一切查完后，如果当前子部门确实存在子部门（孙子部门）。此时，sub为二级部门。</span>
+            <span class="token comment" spellcheck="true">//将孙子部门设置为od下属</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>null <span class="token operator">!=</span> sub <span class="token operator">&amp;&amp;</span> sub<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                od<span class="token punctuation">.</span><span class="token function">setDepartment</span><span class="token punctuation">(</span>sub<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> null<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p>好了，有了“特殊工作者”死信队列，那还得有普通工作者啊。毕竟我们的主要业务都是那些普通工作者做的。</p>
-<p>配置普通队列，<strong>注意，这里才是配置死信队列成功的关键！！！</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//普通交换机声明</span>
-<span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span><span class="token string">"ex_media_processor"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> Exchange <span class="token function">EX_MEDIA_VIDEOTASK</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> ExchangeBuilder<span class="token punctuation">.</span><span class="token function">directExchange</span><span class="token punctuation">(</span><span class="token string">"ex_media_processor"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">durable</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">//声明队列</span>
-<span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span><span class="token string">"queue_media_video_processtask"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> Queue <span class="token function">QUEUE_PROCESSTASK</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//注意，这里是死信队列配置成功的关键！！！</span>
-    Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>Object<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//队列等待时间</span>
-    map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"x-message-ttl"</span><span class="token punctuation">,</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h2 id="方案2：一次性查出所有部门，减少数据库操作"><a href="#方案2：一次性查出所有部门，减少数据库操作" class="headerlink" title="方案2：一次性查出所有部门，减少数据库操作"></a>方案2：一次性查出所有部门，减少数据库操作</h2><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DepartmentServiceImpl</span> <span class="token keyword">extends</span> <span class="token class-name">ServiceImpl</span><span class="token operator">&lt;</span>DepartmentMapper<span class="token punctuation">,</span> Department<span class="token operator">></span> <span class="token keyword">implements</span> <span class="token class-name">DepartmentService</span> <span class="token punctuation">{</span>
 
-    <span class="token comment" spellcheck="true">//死信队列的交换机，dead_exchange对应的是死信交换机的名称</span>
-    map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"x-dead-letter-exchange"</span><span class="token punctuation">,</span><span class="token string">"dead_exchange"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> DepartmentMapper departmentMapper<span class="token punctuation">;</span>
 
-    <span class="token comment" spellcheck="true">//死信队列的路由，dev是我自己取的路由key</span>
-    map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"x-dead-letter-routing-key"</span><span class="token punctuation">,</span><span class="token string">"dev"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//所有部门</span>
+    <span class="token keyword">private</span> List<span class="token operator">&lt;</span>Department<span class="token operator">></span> allDepts<span class="token punctuation">;</span>
 
-    Queue queue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Queue</span><span class="token punctuation">(</span>queue_media_video_processtask<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">,</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> queue<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Department<span class="token operator">></span> <span class="token function">getMenus</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//查出department表的所有字段，避免多次查询的多次连接数据库</span>
+        allDepts <span class="token operator">=</span> departmentMapper<span class="token punctuation">.</span><span class="token function">selectList</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">QueryWrapper</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//查父级id是0的所有department</span>
+        <span class="token keyword">return</span> <span class="token function">getSub</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-<span class="token annotation punctuation">@Bean</span>
-<span class="token keyword">public</span> Binding <span class="token function">binding_queue_media_processtask</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Qualifier</span><span class="token punctuation">(</span><span class="token string">"queue_media_video_processtask"</span><span class="token punctuation">)</span> Queue queue<span class="token punctuation">,</span> <span class="token annotation punctuation">@Qualifier</span><span class="token punctuation">(</span><span class="token string">"ex_media_processor"</span><span class="token punctuation">)</span> Exchange exchange<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> BindingBuilder<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">to</span><span class="token punctuation">(</span>exchange<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">with</span><span class="token punctuation">(</span><span class="token string">"routingkey_media_video"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">noargs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span></code></pre>
-<h2 id="定义生产者和消费者"><a href="#定义生产者和消费者" class="headerlink" title="定义生产者和消费者"></a>定义生产者和消费者</h2><p>这里由于是自己的项目，我也比较懒…大家就正常配一下就好了。生产者发送消息给普通的交换机”ex_media_processor”,消费者绑定并监听普通的队列”queue_media_video_processtask”，此时不必理会死信队列的相关问题，正常操作就好。</p>
-<h2 id="死信队列演示"><a href="#死信队列演示" class="headerlink" title="死信队列演示"></a>死信队列演示</h2><p>为了使生产者发送的消息变成死信，我们可以这么做：</p>
-<ol>
-<li><p><strong>先启动消费端</strong>，这时可以看见页面上，死信交换机、死信队列、普通队列都已经上线！</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/19860184-c1ed014115d40a6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="消费端启动-交换机.png"></p>
-<p>第一个红色框是普通交换机，第二个是死信交换机。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/19860184-d746908c8b471e5b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="消费端启动.png"></p>
-<p>我们刚刚启动的两个队列，第一个是死信队列，第二个红框是普通队列；其中普通队列后标识的DLX代表死信交换机，DLK代表死信路由，也就是说，当前队列已经配置了相关属性。</p>
-</li>
-<li><p><strong>关闭消费端，启动生产端</strong>，注意，配置队列和交换机时要配置成持久化的，autoDelete这种配置设成false，这样在关闭消费端时，这些对应的队列、交换机不会消失。</p>
-<p>此时，交换机和队列没有任何变化。</p>
-</li>
-<li><p><strong>生产端的生产者向普通交换机发送消息</strong>。此时，消息进入普通交换机，普通交换机根据路由分配给对应的普通队列。可是经过了一小段时间(设置的TTL)，该普通队列发现该消息已经过期，所以将该消息转发到死信交换机，死信交换机再根据消息的路由，转发到设定好的死信队列中。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/19860184-cfc9d531dd0f8ebe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="死信队列演示-普通队列.png"></p>
-<p>由上图可以看出，普通队列对于生产者发送的消息的“思考”：队列发现消息后，等待，等待一定时间后，发现该消息已经过期，普通队列决定扔掉它，往哪里扔呢，往曾经设置好的死信路由扔！</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/19860184-19c8c1084c276bb6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="死信队列演示-死信队列.png"></p>
-<p>由上图看出，死信队列收到了被扔过来的消息，所以出现了一个缓坡，代表收到。具体的，可以参照时间轴，在14：26：40时，普通队列扔，死信队列接，死信队列从1升成2。注，因为之前测试，所以死信队列里残存了一条历史消息。</p>
-</li>
-</ol>
-<p>至此，死信队列的演示已经完成。大家可以根据具体的业务要求，监听死信队列，对“死信”进行消费处理。</p>
+    <span class="token comment" spellcheck="true">//用pid查询其下属部门</span>
+    <span class="token keyword">private</span> List<span class="token operator">&lt;</span>Department<span class="token operator">></span> <span class="token function">getSub</span><span class="token punctuation">(</span>Integer pid<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//在所有部门中筛选parentId符合条件的项，组成list</span>
+        <span class="token comment" spellcheck="true">//这里的depts和for循环只是为了避免多次连接数据库，所以在此筛选</span>
+        List<span class="token operator">&lt;</span>Department<span class="token operator">></span> depts <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Department dept <span class="token operator">:</span> allDepts<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>pid<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>dept<span class="token punctuation">.</span><span class="token function">getParentId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                depts<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>dept<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment" spellcheck="true">//对符合条件的 depts 进行遍历</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Department dept <span class="token operator">:</span> depts<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//得到其下属部门 subs</span>
+            List<span class="token operator">&lt;</span>Department<span class="token operator">></span> subs <span class="token operator">=</span> <span class="token function">getSub</span><span class="token punctuation">(</span>dept<span class="token punctuation">.</span><span class="token function">getDeptId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>null <span class="token operator">!=</span> subs <span class="token operator">&amp;&amp;</span> subs<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">//将下属部门添加到当前 dept 部门</span>
+                dept<span class="token punctuation">.</span><span class="token function">setDepartments</span><span class="token punctuation">(</span>subs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> depts<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>其中，Department类如下：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Department</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> serialVersionUID <span class="token operator">=</span> 1L<span class="token punctuation">;</span>
+
+   <span class="token comment" spellcheck="true">/**
+    * 部门ID
+    */</span>
+    <span class="token annotation punctuation">@TableId</span><span class="token punctuation">(</span>type <span class="token operator">=</span> IdType<span class="token punctuation">.</span>ID_WORKER_STR<span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Integer deptId<span class="token punctuation">;</span>
+   <span class="token comment" spellcheck="true">/**
+    * 上级部门ID(默认0，无上级部门)
+    */</span>
+    <span class="token keyword">private</span> Integer parentId<span class="token punctuation">;</span>
+   <span class="token comment" spellcheck="true">/**
+    * 部门名称
+    */</span>
+    <span class="token keyword">private</span> String deptName<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 子部门
+     */</span>
+    <span class="token annotation punctuation">@TableField</span><span class="token punctuation">(</span>exist <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> List<span class="token operator">&lt;</span>Department<span class="token operator">></span> departments<span class="token punctuation">;</span></code></pre>
 
             </div>
             <hr/>
@@ -583,7 +595,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://live4bug.com/2019/02/07/RabbitMQ%E7%9A%84%E6%AD%BB%E4%BF%A1%E9%98%9F%E5%88%97/">http://live4bug.com/2019/02/07/RabbitMQ%E7%9A%84%E6%AD%BB%E4%BF%A1%E9%98%9F%E5%88%97/</a>
+                    <a href="http://live4bug.com/2020/02/13/%E8%BF%AD%E4%BB%A3%E5%AE%9E%E7%8E%B0%E9%83%A8%E9%97%A8%E8%A1%A8%E6%A0%91%E5%BD%A2%E5%B1%82%E7%BA%A7/">http://live4bug.com/2020/02/13/%E8%BF%AD%E4%BB%A3%E5%AE%9E%E7%8E%B0%E9%83%A8%E9%97%A8%E8%A1%A8%E6%A0%91%E5%BD%A2%E5%B1%82%E7%BA%A7/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -621,16 +633,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">
-                                    <span class="chip bg-color">消息队列</span>
+                                <a href="/tags/%E5%90%8E%E7%AB%AF/">
+                                    <span class="chip bg-color">后端</span>
                                 </a>
                             
-                                <a href="/tags/%E6%AD%BB%E4%BF%A1%E9%98%9F%E5%88%97/">
-                                    <span class="chip bg-color">死信队列</span>
+                                <a href="/tags/%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%A0%81/">
+                                    <span class="chip bg-color">基础代码</span>
                                 </a>
                             
-                                <a href="/tags/RabbitMQ/">
-                                    <span class="chip bg-color">RabbitMQ</span>
+                                <a href="/tags/%E6%A0%91%E5%BD%A2%E5%B1%82%E7%BA%A7/">
+                                    <span class="chip bg-color">树形层级</span>
                                 </a>
                             
                         </div>
@@ -801,7 +813,7 @@
         repo: 'sygtch.github.io',
         owner: 'sygtch',
         admin: "sygtch",
-        id: '2019-02-07T00-00-00',
+        id: '2020-02-13T00-00-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -822,11 +834,12 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/02/13/%E8%BF%AD%E4%BB%A3%E5%AE%9E%E7%8E%B0%E9%83%A8%E9%97%A8%E8%A1%A8%E6%A0%91%E5%BD%A2%E5%B1%82%E7%BA%A7/">
+                <a href="/2020/02/13/%E8%BF%AD%E4%BB%A3%E5%AE%9E%E7%8E%B0%E9%83%A8%E9%97%A8%E8%A1%A8%E6%A0%91%E5%BD%A2%E5%B1%82%E7%BA%A7/">
                     <div class="card-image">
                         
                         <img src="https://upload-images.jianshu.io/upload_images/19860184-92290aca0f2a6c4d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="迭代实现部门表树形层级">
@@ -841,9 +854,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-02-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -856,6 +869,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -882,30 +896,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/03/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+                <a href="/2020/02/07/RabbitMQ%E7%9A%84%E6%AD%BB%E4%BF%A1%E9%98%9F%E5%88%97/">
                     <div class="card-image">
                         
-                        <img src="https://upload-images.jianshu.io/upload_images/19860184-53529e8b23ad9e31.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="Lambda表达式">
+                        <img src="https://upload-images.jianshu.io/upload_images/19860184-f2d6213bc3c222ec.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="responsive-img" alt="RabbitMQ的死信队列">
                         
-                        <span class="card-title">Lambda表达式</span>
+                        <span class="card-title">RabbitMQ的死信队列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            大家都知道是Java新特性，可是用的却很少，其实真的很实用。
+                            阴差阳错的学到了死信队列，在上一家公司就听大佬随口说过，终于用到了。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-02-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                            <a href="/categories/%E7%BB%84%E4%BB%B6/" class="post-category">
+                                    组件
                                 </a>
                             
                             
@@ -915,16 +929,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%90%8E%E7%AB%AF/">
-                        <span class="chip bg-color">后端</span>
+                    <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">
+                        <span class="chip bg-color">消息队列</span>
                     </a>
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/%E6%AD%BB%E4%BF%A1%E9%98%9F%E5%88%97/">
+                        <span class="chip bg-color">死信队列</span>
                     </a>
                     
-                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">基础</span>
+                    <a href="/tags/RabbitMQ/">
+                        <span class="chip bg-color">RabbitMQ</span>
                     </a>
                     
                 </div>
