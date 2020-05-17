@@ -441,7 +441,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-26
+                    2020-02-29
                 </div>
                 
 
@@ -703,7 +703,7 @@
    ```java
    .\logstash.bat -f ..\config\mysql.conf</code></pre><p>   修改course_pub中的数据，并且修改timestamp为当前时间，观察Logstash日志是否读取到要索引的数据。</p>
 <p>   <img src="https://upload-images.jianshu.io/upload_images/19860184-f6bb5250ca6c8c5b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="logstash成功导入到ES索引"></p>
-<p>   <strong>注意</strong>：这里需要注意几个问题，mysql.conf 文件中的账户密码要有双引号！如果拿到了数据，却没有在ES添加，应该是jdbc安装问题！所有的配置路径不要写错！如果重新安装了jdbc还不行，就去把索引删掉重新来一遍，就好使了（我就是…）</p>
+<p>   <strong>注意</strong>：这里需要注意几个问题，mysql.conf 文件中的账户密码要有双引号！如果拿到了数据，却没有在ES添加，应该是jdbc安装问题（第二步）！所有的配置路径不要写错！如果重新安装了jdbc还不行，就去把索引删掉重新来一遍，就好使了（我就是…）</p>
 <h2 id="ES搜索的业务开发"><a href="#ES搜索的业务开发" class="headerlink" title="ES搜索的业务开发"></a>ES搜索的业务开发</h2><p>yml配置：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
   <span class="token key atrule">port</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>port<span class="token punctuation">:</span><span class="token number">40100</span><span class="token punctuation">}</span>
@@ -1399,7 +1399,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;
-			<span class="white-color">24.9k</span>&nbsp;字
+			<span class="white-color">40.5k</span>&nbsp;字
             
             
             
